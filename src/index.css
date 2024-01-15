@@ -232,12 +232,22 @@ p {
   background: #286cb5;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .SignOut,
 .SignIn {
+  opacity: 0;
   padding: 40px 0 0 800px;
   height: 100vh;
   box-sizing: border-box;
   background: url("./assets/images/guitar.jpg") no-repeat left top;
+  animation: appear 0.6s ease 0.8s forwards;
 }
 .SignOut .ialogo,
 .SignIn .ialogo {

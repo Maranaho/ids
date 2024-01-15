@@ -9,7 +9,7 @@ const FireBaseInit = {
   projectId: "pyro-intuit",
   storageBucket: "pyro-intuit.appspot.com",
   messagingSenderId: "657829873421",
-  appId: import.meta.env.REACT_APP_FIREBASE_APP_ID
+  appId: import.meta.env.VITE_REACT_APP_FIREBASE_APP_ID
 }
 
 const app = initializeApp(FireBaseInit)
