@@ -3,7 +3,6 @@ const NonIntuitUser = ()=>{
 
   return (
     <section className="NonIntuitUser">
-      NonIntuitUser
       <SignOut/>
     </section>
   )

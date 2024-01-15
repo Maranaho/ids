@@ -1,4 +1,6 @@
 $blue:#0575DD;
+$cgBlue:#1f5ea3;
+$cgLightBlue:#286cb5;
 $tofu: #f4f4f0;
 $pepper: #c3ced5;
 $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
@@ -215,3 +217,44 @@ p{margin: 0}
         }
     }
 }
+
+.sign {
+    border: none;
+    background: $cgBlue;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 100px;
+    font-weight: bold;
+    font-size: 1.1em;
+    &:hover {background: $cgLightBlue}
+}
+
+.SignOut,
+.SignIn {
+    padding: 40px 0 0 800px;
+    height: 100vh;
+    box-sizing: border-box;
+    background: url("./assets/images/guitar.jpg") no-repeat left top;
+    .ialogo{
+        // position: fixed;
+        // top: 20px;
+        // left: 20px;
+        display: block;
+        margin-bottom: 150px;
+    }
+    > div {
+        background: url("./assets/svg/signtitle.svg") no-repeat left top;
+        h1,p {
+            color: transparent;
+            margin: 0;
+        }
+        h1 { font-size: 3em }
+        p {
+            padding: 10px 0 50px;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.SignOut > div { background: url("./assets/svg/nonintuit.svg") no-repeat left top }

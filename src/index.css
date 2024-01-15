@@ -216,4 +216,54 @@ p {
   border-radius: 10px;
   background: linear-gradient(90deg, #41DDFF, #2ECB80);
   transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+}
+
+.sign {
+  border: none;
+  background: #1f5ea3;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 100px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.sign:hover {
+  background: #286cb5;
+}
+
+.SignOut,
+.SignIn {
+  padding: 40px 0 0 800px;
+  height: 100vh;
+  box-sizing: border-box;
+  background: url("./assets/images/guitar.jpg") no-repeat left top;
+}
+.SignOut .ialogo,
+.SignIn .ialogo {
+  display: block;
+  margin-bottom: 150px;
+}
+.SignOut > div,
+.SignIn > div {
+  background: url("./assets/svg/signtitle.svg") no-repeat left top;
+}
+.SignOut > div h1, .SignOut > div p,
+.SignIn > div h1,
+.SignIn > div p {
+  color: transparent;
+  margin: 0;
+}
+.SignOut > div h1,
+.SignIn > div h1 {
+  font-size: 3em;
+}
+.SignOut > div p,
+.SignIn > div p {
+  padding: 10px 0 50px;
+  font-size: 1.2em;
+}
+
+.SignOut > div {
+  background: url("./assets/svg/nonintuit.svg") no-repeat left top;
 }/*# sourceMappingURL=index.css.map */
