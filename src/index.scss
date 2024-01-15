@@ -1,0 +1,217 @@
+$blue:#0575DD;
+$tofu: #f4f4f0;
+$pepper: #c3ced5;
+$drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
+$drawerWidth: 400px;
+
+//placeholder
+$place: 60px;
+$pink: rgba(215,39,146,.5);
+$lightPink: rgba(215,39,146,.05);
+$teal: #05A4B5;
+
+//slider colors
+$electric: #41DDFF;
+$green: #2ECB80;
+$grey: #A8A8A8;
+
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    overscroll-behavior: none;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+button{cursor: pointer}
+p{margin: 0}
+
+.intuit {
+    display: flex;
+    width: 100vw;
+    .main{ flex:1 }
+}
+.LeftNav {
+    height: 100vh;
+    background: $tofu;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: calc(100vh - 100px);
+}
+
+.Topbar {
+    display: flex;
+    justify-content: space-between;
+    background: url("./assets/svg/borders-top.svg");
+    position: relative;
+}
+
+.closeBtn,
+.AccessPointButton {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+}
+
+.drawer{
+    border-left: 1px solid $pepper;
+    margin-right: -$drawerWidth;
+    transition: 1s $drawerEase;
+    position: relative;
+    &.showAssist{margin-right: 0}
+}
+.drawerContent {
+    width: $drawerWidth;
+    padding: 20px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    height: calc(100vh - 260px);
+    overflow-y: scroll !important;
+}
+
+.Lottie {
+    width:20px;
+    margin-right: 5px
+}
+
+.drawerHeader,
+.Generating {
+    display: flex;
+    align-items: center;
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: center;
+    > span{margin: 0 !important;}
+}
+
+
+.Placeholder {
+    margin: $place;
+    width: 100%;
+    height: calc(100% - $place * 2);
+    background: $lightPink;
+    border-radius: 20px;
+    border: 1px dashed $pink;
+}
+
+.suggestions > span {
+    display: inline-block;
+    padding-bottom: 25px;
+}
+
+.Turbi {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    header {
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+}
+
+.riveComponent {
+    width: 350px;
+    height: 280px;
+}
+
+
+.TTTitle {
+    text-align: center;
+    margin-top: 50px;
+    min-height: 116px;
+    background: url("./assets/svg/tt_title.svg") center center no-repeat;
+    .H3,.Regular{color: transparent}
+    .H3{
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: 2.6em;
+    }
+    .Regular{
+        font-size: 1.3em;
+        font-weight: 100;
+    }
+}
+
+
+.TTNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img{cursor: pointer}
+}
+
+.Steps {
+    display: flex;
+    padding: 10px 0;
+    div{
+        flex: 1;
+        height: 4px;
+        background: $teal;
+        &:not(:last-child){ margin-right: 4px }
+        &:last-child{opacity: .2}
+    }
+}
+
+.Range {
+    position: relative;
+    width: 400px;
+    margin-top: 40px;
+    input{
+        position: absolute;
+        left: 0;
+        top: -20px;
+        width: 100%;
+        height: 40px;
+        cursor: pointer;
+        z-index: 1;
+        opacity: 0;
+    }
+    .rangeInput{
+        position: relative;
+        z-index: 0;
+        background: $grey;
+        height: 6px;
+        border-radius: 10px;
+        button {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #fff;
+            box-sizing: border-box;
+            box-shadow: 0 10px 20px rgba(0,0,0,.2);
+            border-radius: 50%;
+            background: $green;
+            transition: 1s $drawerEase;
+            position: relative;
+            top: -7px;
+        }
+        .labels{
+            position: absolute;
+            left: 0;
+            bottom: -50px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6px;
+            border-radius: 10px;
+            background: linear-gradient(90deg,$electric,$green);
+            transition: 1s $drawerEase;
+        }
+    }
+}

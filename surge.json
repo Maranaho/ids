@@ -1,0 +1,8 @@
+{
+  "project": "./dist",
+  "domain": "rive-demo.surge.sh",
+  "files": [
+    "assets/turbi-_N608ela.riv"
+  ],
+  "headers": [{"glob":"**/*.riv","headers":{"Cache-Control":"no-store, no-cache, must-revalidate, max-age=0"}}]
+}
