@@ -1,27 +1,28 @@
 import React from "react"
 let initialTTState = {
-  generating:false,
-  showAssist: false
+  isIntuitEmployee:false,
+  org:'@intuit.com',
+  user:null,
 }
 
 const TTContext = React.createContext()
 
 function ttReducer(state, action) {
   switch (action.type) {
+    
+    case 'USER': {
+      let USER = {...state}
+      USER.user = action.payload
+      return USER
+    }
 
-    case 'SHOW_ASSIST': {
-      let SHOW_ASSIST = {...state}
-      SHOW_ASSIST.showAssist = action.payload
-      return SHOW_ASSIST
+
+    case 'IS_FAM':{
+      let IS_FAM = {...state}
+      IS_FAM.isIntuitEmployee= action.payload
+      return IS_FAM
     }
     
-
-    case 'GENERATING': {
-      let GENERATING = {...state}
-      GENERATING.generating = true
-      return GENERATING
-    }
-  
 
     default: throw new Error("Unexpected action")
   }
