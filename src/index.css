@@ -208,6 +208,12 @@ p {
   display: flex;
   justify-content: space-between;
 }
+.Range .rangeInput .labels label {
+  cursor: pointer;
+}
+.Range .rangeInput .labels label:hover {
+  opacity: 0.6;
+}
 .Range .rangeInput .progress {
   position: absolute;
   left: 0;

@@ -23,7 +23,19 @@ const Range = ({value,handleChange})=>{
             <div className="rangeInput">
 
                 <span className="labels">
-                    {labels.map(label=><label key={label}>{label}<br/>confident</label>)}
+                    {labels.map((label,idx)=>{
+                        const e = {
+                            target :{
+                                value:idx
+                            }
+                        }
+                        return (
+                            <label
+                                key={label}
+                                onClick={()=>handleChange(e)}
+                            >{label}<br/>confident</label>
+                        )
+                    })}
                 </span>
 
                 <div
