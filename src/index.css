@@ -163,14 +163,14 @@ p {
   width: 5px;
 }
 .Messages ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #fff;
 }
 .Messages ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #888;
+  background: #a7a7a7;
 }
 .Messages ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #818181;
 }
 
 .TypeMessage {
