@@ -1,0 +1,92 @@
+// Font file paths
+$path: './assets/font/';
+
+// Font family names
+$avenirFont: 'AvenirNext-forINTUIT-W05';
+$avenirFontBold: '#{$avenirFont}-Bold';
+$avenirFontDemi: '#{$avenirFont}-Demi';
+$avenirFontHeavy: '#{$avenirFont}-Heavy';
+$avenirFontMedium: '#{$avenirFont}-Medium';
+$avenirFontRegular: '#{$avenirFont}-Regular';
+$avenirFontThin: '#{$avenirFont}-Thin';
+$avenirFontItalic: '#{$avenirFont}-Italic';
+$avenirFontThinItalic: '#{$avenirFont}-ThinItalic';
+$avenirFontDemiItalic: '#{$avenirFont}-DemiItalic';
+$avenirFontBoldItalic: '#{$avenirFont}-BoldItalic';
+$avenirFontMediumItalic: '#{$avenirFont}-MediumItalic';
+$avenirFontHeavyItalic: '#{$avenirFont}-HeavyItalic';
+
+// Define font-face rules
+@font-face {
+  font-family: "avenirRegular";
+  src: url('#{$path}#{$avenirFont}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFont}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirThin";
+  src: url('#{$path}#{$avenirFontThin}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontThin}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirMedium";
+  src: url('#{$path}#{$avenirFontMedium}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontMedium}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirDemi";
+  src: url('#{$path}#{$avenirFontDemi}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontDemi}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirBold";
+  src: url('#{$path}#{$avenirFontBold}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontBold}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirHeavy";
+  src: url('#{$path}#{$avenirFontHeavy}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontHeavy}_web.woff') format('woff');
+}
+
+
+//Italic
+@font-face {
+  font-family: "avenirItalic";
+  src: url('#{$path}#{$avenirFontItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontItalic}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirThinItalic";
+  src: url('#{$path}#{$avenirFontThinItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontThinItalic}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirMediumItalic";
+  src: url('#{$path}#{$avenirFontMediumItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontMediumItalic}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirDemiItalic";
+  src: url('#{$path}#{$avenirFontDemiItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontDemiItalic}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirBoldItalic";
+  src: url('#{$path}#{$avenirFontBoldItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontBoldItalic}_web.woff') format('woff');
+}
+
+@font-face {
+  font-family: "avenirHeavyItalic";
+  src: url('#{$path}#{$avenirFontHeavyItalic}_web.woff2') format('woff2'),
+       url('#{$path}#{$avenirFontHeavyItalic}_web.woff') format('woff');
+}

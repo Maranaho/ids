@@ -1,6 +1,54 @@
+@font-face {
+  font-family: "avenirRegular";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirThin";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Thin_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Thin_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirMedium";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Medium_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Medium_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirDemi";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Demi_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Demi_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirBold";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Bold_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Bold_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirHeavy";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Heavy_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Heavy_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-Italic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Italic_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirThinItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-ThinItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-ThinItalic_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirMediumItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-MediumItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-MediumItalic_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirDemiItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-DemiItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-DemiItalic_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirBoldItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-BoldItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-BoldItalic_web.woff") format("woff");
+}
+@font-face {
+  font-family: "avenirHeavyItalic";
+  src: url("./assets/font/AvenirNext-forINTUIT-W05-HeavyItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-HeavyItalic_web.woff") format("woff");
+}
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "avenirRegular";
   overscroll-behavior: none;
   font-size: 14px;
   overflow-x: hidden;
@@ -41,11 +89,19 @@ p {
   position: relative;
 }
 
-.closeBtn,
 .AccessPointButton {
   position: absolute;
   top: 14px;
   right: 14px;
+}
+
+.AccessPointButton {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 100px;
+  height: 32px;
+  padding: 0px;
 }
 
 .closeBtn {
@@ -53,17 +109,21 @@ p {
   border: none;
 }
 
-.drawer {
+.Chat {
   border-left: 1px solid #c3ced5;
   margin-right: -400px;
   transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   position: relative;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.drawer.showAssist {
+.Chat.showAssist {
   margin-right: 0;
 }
 
-.drawerContent {
+.ChatContent {
   width: 400px;
   padding: 20px;
   box-sizing: border-box;
@@ -77,18 +137,42 @@ p {
   margin-right: 5px;
 }
 
-.drawerHeader,
+.ChatHeader,
 .Generating {
   display: flex;
   align-items: center;
 }
 
-.drawerHeader {
+.ChatHeader {
   display: flex;
   justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #c3ced5;
 }
-.drawerHeader > span {
+.ChatHeader h2 {
+  font-size: 1.1em;
+  text-align: center;
+  flex: 1;
+  background: url("./assets/svg/intuitassistheader.svg") no-repeat center center;
+  color: transparent;
+  margin: 0;
+  padding: 20px 0;
+}
+.ChatHeader > span {
   margin: 0 !important;
+}
+
+.Messages {
+  overflow-y: scroll;
+  height: calc(100vh - 238px);
+}
+.Messages > div {
+  height: 300vh;
+}
+
+.TypeMessage {
+  border-top: 1px solid #c3ced5;
+  height: 80px;
 }
 
 .Placeholder {
@@ -132,12 +216,13 @@ p {
   color: transparent;
 }
 .TTTitle .H3 {
-  font-weight: 400;
+  font-family: "avenirMedium";
+  font-weight: normal;
   margin-bottom: 10px;
-  font-size: 2.6em;
+  font-size: 2.5em;
 }
 .TTTitle .Regular {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 100;
 }
 
@@ -226,7 +311,7 @@ p {
 
 .sign {
   border: none;
-  background: #1f5ea3;
+  background: #236dff;
   color: #fff;
   border-radius: 4px;
   padding: 10px;
@@ -235,7 +320,7 @@ p {
   font-size: 1.1em;
 }
 .sign:hover {
-  background: #286cb5;
+  background: #3c7dff;
 }
 
 @keyframes appear {

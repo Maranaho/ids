@@ -1,5 +1,5 @@
 import { auth } from '../utils/firebase'
-import motionlogo from '../assets/svg/motionlogo.svg'
+import motionlogo from '../assets/svg/motionlogo2.svg'
 
 const SignOut = ()=>{
   return (

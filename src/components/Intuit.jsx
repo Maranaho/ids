@@ -6,6 +6,7 @@ import {
 import LeftNav from './LeftNav'
 import Topbar from './Topbar'
 import Placeholder from './Placeholder'
+import Chat from './Chat'
 import Turbi from './Turbi'
 
 
@@ -27,6 +28,7 @@ const Intuit = ()=>{
                   {/* <Route path="/" element={<Placeholder/>}/> */}
                   <Route path="/" element={<Turbi/>}/>
                 </Routes>
+                <Chat/>
               </div>
             </section>
           </main>

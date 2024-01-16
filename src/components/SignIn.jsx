@@ -1,5 +1,5 @@
 import { auth,provider,GoogleAuthProvider,signInWithPopup } from '../utils/firebase'
-import motionlogo from '../assets/svg/motionlogo.svg'
+import motionlogo from '../assets/svg/motionlogo2.svg'
 
 const SignIn = ()=>{
 

@@ -1,9 +1,12 @@
+@import './avenirNextForIntuit.scss';
+
 $blue:#0575DD;
-$cgBlue:#1f5ea3;
-$cgLightBlue:#286cb5;
+$superBlue:#236dff;
+$superBlueLight:#3c7dff;
 $tofu: #f4f4f0;
 $pepper: #c3ced5;
 $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
+$typeHeight: 80px;
 $drawerWidth: 400px;
 
 //placeholder
@@ -20,7 +23,7 @@ $grey: #A8A8A8;
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "avenirRegular";
     overscroll-behavior: none;
     font-size: 14px;
     overflow-x: hidden;
@@ -51,11 +54,18 @@ p{margin: 0}
     position: relative;
 }
 
-.closeBtn,
 .AccessPointButton {
     position: absolute;
     top: 14px;
     right: 14px;
+}
+.AccessPointButton{
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 100px;
+    height: 32px;
+    padding: 0px;
 }
 
 .closeBtn {
@@ -63,14 +73,18 @@ p{margin: 0}
     border: none;
 }
 
-.drawer{
+.Chat{
     border-left: 1px solid $pepper;
     margin-right: -$drawerWidth;
     transition: 1s $drawerEase;
     position: relative;
+    width: $drawerWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &.showAssist{margin-right: 0}
 }
-.drawerContent {
+.ChatContent {
     width: $drawerWidth;
     padding: 20px;
     box-sizing: border-box;
@@ -84,16 +98,40 @@ p{margin: 0}
     margin-right: 5px
 }
 
-.drawerHeader,
+.ChatHeader,
 .Generating {
     display: flex;
     align-items: center;
 }
 
-.drawerHeader {
+.ChatHeader {
     display: flex;
     justify-content: center;
+    position: relative;
+    border-bottom: 1px solid $pepper;
+    h2 {
+        font-size: 1.1em;
+        text-align: center;
+        flex: 1;
+        background: url("./assets/svg/intuitassistheader.svg") no-repeat center center;
+        color: transparent;
+        margin: 0;
+        padding: 20px 0;
+    }
     > span{margin: 0 !important;}
+}
+
+.Messages {
+    overflow-y: scroll;
+    height: calc(100vh - (158px + $typeHeight));
+    > div {
+        height: 300vh;
+    }
+}
+
+.TypeMessage {
+    border-top: 1px solid $pepper;
+    height: $typeHeight;
 }
 
 
@@ -136,13 +174,16 @@ p{margin: 0}
     background: url("./assets/svg/tt_title.svg") center center no-repeat;
     .H3,.Regular{color: transparent}
     .H3{
-        font-weight: 400;
+        font-family: "avenirMedium";
+        font-weight: normal;
         margin-bottom: 10px;
-        font-size: 2.6em;
+        font-size: 2.5em;
+        // opacity: .5;
     }
     .Regular{
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: 100;
+        // opacity: .5;
     }
 }
 
@@ -224,14 +265,14 @@ p{margin: 0}
 
 .sign {
     border: none;
-    background: $cgBlue;
+    background: $superBlue;
     color: #fff;
     border-radius: 4px;
     padding: 10px;
     min-width: 100px;
     font-weight: bold;
     font-size: 1.1em;
-    &:hover {background: $cgLightBlue}
+    &:hover {background: $superBlueLight}
 }
 
 
@@ -267,3 +308,4 @@ p{margin: 0}
 }
 
 .SignOut > div { background: url("./assets/svg/nonintuit.svg") no-repeat left top }
+
