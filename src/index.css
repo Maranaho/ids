@@ -159,6 +159,19 @@ p {
   padding: 12px;
   display: inline-block;
 }
+.Messages ::-webkit-scrollbar {
+  width: 5px;
+}
+.Messages ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.Messages ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+.Messages ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 .TypeMessage {
   border-top: 1px solid #c3ced5;

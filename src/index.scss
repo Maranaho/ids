@@ -176,7 +176,28 @@ p{margin: 0}
             }
         }
     }
- 
+
+    
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+   
+    ::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #a7a7a7;
+    }
+
+   
+    ::-webkit-scrollbar-thumb:hover {
+    background: #818181;
+    }
+
 }
 
 .TypeMessage {

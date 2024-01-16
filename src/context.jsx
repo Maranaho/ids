@@ -3,7 +3,7 @@ import messages from "./messages.json"
 
 let initialTTState = {
   isIntuitEmployee:false,
-  showAssist:false,
+  showAssist:true,
   org:'@intuit.com',
   devName:'maranaho',
   user:null,
