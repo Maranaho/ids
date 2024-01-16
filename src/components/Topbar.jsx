@@ -17,7 +17,7 @@ const Topbar = ()=>{
                 className="AccessPointButton"
                 onMouseOver={()=>setBtnState(1)}
                 onMouseLeave={()=>setBtnState(0)}
-                // onClick={()=>dispatch({type:"SHOW_ASSIST",payload:true})}
+                onClick={()=>dispatch({type:"SHOW_ASSIST",payload:true})}
             >
                 <img src={btnState === 0?accesspoint:accesspointhover}/>
             </button>

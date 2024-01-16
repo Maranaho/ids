@@ -3,7 +3,7 @@ import messages from "./messages.json"
 
 let initialTTState = {
   isIntuitEmployee:false,
-  showAssist:false,
+  showAssist:true,
   org:'@intuit.com',
   devName:'maranaho',
   user:null,
@@ -30,7 +30,7 @@ function ttReducer(state, action) {
 
     case 'SHOW_ASSIST': {
       let SHOW_ASSIST = {...state}
-      SHOW_ASSIST.showAssist = action.payload
+      // SHOW_ASSIST.showAssist = action.payload
       return SHOW_ASSIST
     }
     

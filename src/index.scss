@@ -1,6 +1,10 @@
-@import './avenirNextForIntuit.scss';
+@import './assets/font/font.css';
 
 $blue:#0575DD;
+$bubble:#0077c5;
+$chipBg:rgba(0, 119, 197, 0);
+$chipHover:rgba(0, 119, 197, .1);
+$chipActive:rgba(0, 119, 197, .2);
 $superBlue:#236dff;
 $superBlueLight:#3c7dff;
 $tofu: #f4f4f0;
@@ -8,6 +12,7 @@ $pepper: #c3ced5;
 $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
 $typeHeight: 80px;
 $drawerWidth: 400px;
+$txt: #3c4349;
 
 //placeholder
 $place: 60px;
@@ -20,13 +25,21 @@ $electric: #41DDFF;
 $green: #2ECB80;
 $grey: #A8A8A8;
 
+//Chip
+$scaleCurve: cubic-bezier(0.15, 1.4, 0.25, 1);
+$opacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
+$transitionCurve: cubic-bezier(0.35, 0, 0.5, 1);
+$disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
+$disappearScaleCurve: cubic-bezier(0.35, 0, 1, 1);
+
 
 body {
     margin: 0;
-    font-family: "avenirRegular";
+    font-family: avenirRegular,"sans-serif";
     overscroll-behavior: none;
     font-size: 14px;
     overflow-x: hidden;
+    color:$txt;
 }
 button{cursor: pointer}
 p{margin: 0}
@@ -109,14 +122,18 @@ p{margin: 0}
     justify-content: center;
     position: relative;
     border-bottom: 1px solid $pepper;
+    .closeBtn {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+    }
     h2 {
-        font-size: 1.1em;
+        font-size: 1.2em;
         text-align: center;
         flex: 1;
-        background: url("./assets/svg/intuitassistheader.svg") no-repeat center center;
-        color: transparent;
         margin: 0;
-        padding: 20px 0;
+        padding: 18px 0;
+        font-family: avenirDemi;
     }
     > span{margin: 0 !important;}
 }
@@ -124,9 +141,42 @@ p{margin: 0}
 .Messages {
     overflow-y: scroll;
     height: calc(100vh - (158px + $typeHeight));
-    > div {
-        height: 300vh;
+    padding: 20px;
+    box-sizing: border-box;
+    article{
+        font-family: avenirMedium;
+        line-height: 1.4em;
+        span {
+            font-family: avenirDemi;
+            opacity: .8;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        &.assistant{
+            padding: 15px 0;
+            transition: .6s $drawerEase;
+            &.submitted,
+            &.submitted .Chips{  padding: 15px 0 0 0 }
+        }
+        &.user {
+            padding-left: 90px;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 4px;
+            & + .user p {
+
+                border-radius: 16px 16px 3px;
+            }
+            p {
+                background: $bubble;
+                color: #fff;
+                border-radius: 16px;
+                padding: 12px;
+                display: inline-block;
+            }
+        }
     }
+ 
 }
 
 .TypeMessage {
@@ -171,19 +221,16 @@ p{margin: 0}
     text-align: center;
     margin-top: 50px;
     min-height: 116px;
-    background: url("./assets/svg/tt_title.svg") center center no-repeat;
-    .H3,.Regular{color: transparent}
     .H3{
-        font-family: "avenirMedium";
+        font-family: avenirMedium;
         font-weight: normal;
         margin-bottom: 10px;
-        font-size: 2.5em;
-        // opacity: .5;
+        font-size: 2.4em;
+        
     }
     .Regular{
         font-size: 1.2em;
-        font-weight: 100;
-        // opacity: .5;
+        
     }
 }
 
@@ -309,3 +356,75 @@ p{margin: 0}
 
 .SignOut > div { background: url("./assets/svg/nonintuit.svg") no-repeat left top }
 
+
+@keyframes chip_opacity {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@keyframes chip_scale {
+    from {  transform: scale(.8)}
+    to {  transform: scale(1)}
+}
+
+@keyframes chip_disappear_opacity {
+    from{ opacity: 1 }
+    to{  opacity: 0 }
+}
+
+@keyframes chip_disappear_scale {
+    from{  transform: scale(1)}
+    to{ transform: scale(.8) }
+}
+
+
+.Chips {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 15px 0;
+    transition: .6s $drawerEase;
+}
+  
+.Chip {
+    border: 2px solid $bubble;
+    display: inline-block;
+    background: $chipBg;
+    color: $bubble;
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-family: avenirMedium;
+    font-size: 1em;
+    opacity: 1;
+    transform: scale(1);
+    transition: .6s $drawerEase;
+    height: 51px;
+    &.firstPaint{
+        opacity: 0;
+        transform: scale(.8);
+        animation:
+        chip_opacity .25s $opacityCurve forwards,
+        chip_scale .6s $scaleCurve forwards;
+    }
+    &.gone{
+        border: 0 solid $bubble;
+        height: 0;
+        padding: 0;
+        transform: scale(.4);
+        opacity: 0;
+        margin-top: 0!important;
+    }
+    
+    &.toBubble {
+        border: 0 solid $bubble;
+        background: $bubble;
+        color: #fff;
+        border-radius: 16px 16px 3px;
+        padding: 12px;
+        display: inline-block;
+    }
+    
+    &:not(:first-child){margin-top: 5px}
+    &:hover:not(.toBubble) { background: $chipHover }
+    &:active { background: $chipActive }
+}

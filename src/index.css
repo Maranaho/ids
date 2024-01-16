@@ -1,57 +1,11 @@
-@font-face {
-  font-family: "avenirRegular";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirThin";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Thin_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Thin_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirMedium";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Medium_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Medium_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirDemi";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Demi_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Demi_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirBold";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Bold_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Bold_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirHeavy";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Heavy_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Heavy_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-Italic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-Italic_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirThinItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-ThinItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-ThinItalic_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirMediumItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-MediumItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-MediumItalic_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirDemiItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-DemiItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-DemiItalic_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirBoldItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-BoldItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-BoldItalic_web.woff") format("woff");
-}
-@font-face {
-  font-family: "avenirHeavyItalic";
-  src: url("./assets/font/AvenirNext-forINTUIT-W05-HeavyItalic_web.woff2") format("woff2"), url("./assets/font/AvenirNext-forINTUIT-W05-HeavyItalic_web.woff") format("woff");
-}
+@import './assets/font/font.css';
 body {
   margin: 0;
-  font-family: "avenirRegular";
+  font-family: avenirRegular, "sans-serif";
   overscroll-behavior: none;
   font-size: 14px;
   overflow-x: hidden;
+  color: #3c4349;
 }
 
 button {
@@ -149,14 +103,18 @@ p {
   position: relative;
   border-bottom: 1px solid #c3ced5;
 }
+.ChatHeader .closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
 .ChatHeader h2 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: center;
   flex: 1;
-  background: url("./assets/svg/intuitassistheader.svg") no-repeat center center;
-  color: transparent;
   margin: 0;
-  padding: 20px 0;
+  padding: 18px 0;
+  font-family: avenirDemi;
 }
 .ChatHeader > span {
   margin: 0 !important;
@@ -165,9 +123,41 @@ p {
 .Messages {
   overflow-y: scroll;
   height: calc(100vh - 238px);
+  padding: 20px;
+  box-sizing: border-box;
 }
-.Messages > div {
-  height: 300vh;
+.Messages article {
+  font-family: avenirMedium;
+  line-height: 1.4em;
+}
+.Messages article span {
+  font-family: avenirDemi;
+  opacity: 0.8;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.Messages article.assistant {
+  padding: 15px 0;
+  transition: 0.6s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+}
+.Messages article.assistant.submitted, .Messages article.assistant.submitted .Chips {
+  padding: 15px 0 0 0;
+}
+.Messages article.user {
+  padding-left: 90px;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+.Messages article.user + .user p {
+  border-radius: 16px 16px 3px;
+}
+.Messages article.user p {
+  background: #0077c5;
+  color: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  display: inline-block;
 }
 
 .TypeMessage {
@@ -210,20 +200,15 @@ p {
   text-align: center;
   margin-top: 50px;
   min-height: 116px;
-  background: url("./assets/svg/tt_title.svg") center center no-repeat;
-}
-.TTTitle .H3, .TTTitle .Regular {
-  color: transparent;
 }
 .TTTitle .H3 {
-  font-family: "avenirMedium";
+  font-family: avenirMedium;
   font-weight: normal;
   margin-bottom: 10px;
-  font-size: 2.5em;
+  font-size: 2.4em;
 }
 .TTTitle .Regular {
   font-size: 1.2em;
-  font-weight: 100;
 }
 
 .TTNav {
@@ -367,4 +352,89 @@ p {
 
 .SignOut > div {
   background: url("./assets/svg/nonintuit.svg") no-repeat left top;
+}
+
+@keyframes chip_opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes chip_scale {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes chip_disappear_opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes chip_disappear_scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+.Chips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 0;
+  transition: 0.6s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+}
+
+.Chip {
+  border: 2px solid #0077c5;
+  display: inline-block;
+  background: rgba(0, 119, 197, 0);
+  color: #0077c5;
+  padding: 15px 20px;
+  border-radius: 40px;
+  font-family: avenirMedium;
+  font-size: 1em;
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.6s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+  height: 51px;
+}
+.Chip.firstPaint {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: chip_opacity 0.25s cubic-bezier(0.35, 0, 0.5, 1) forwards, chip_scale 0.6s cubic-bezier(0.15, 1.4, 0.25, 1) forwards;
+}
+.Chip.gone {
+  border: 0 solid #0077c5;
+  height: 0;
+  padding: 0;
+  transform: scale(0.4);
+  opacity: 0;
+  margin-top: 0 !important;
+}
+.Chip.toBubble {
+  border: 0 solid #0077c5;
+  background: #0077c5;
+  color: #fff;
+  border-radius: 16px 16px 3px;
+  padding: 12px;
+  display: inline-block;
+}
+.Chip:not(:first-child) {
+  margin-top: 5px;
+}
+.Chip:hover:not(.toBubble) {
+  background: rgba(0, 119, 197, 0.1);
+}
+.Chip:active {
+  background: rgba(0, 119, 197, 0.2);
 }/*# sourceMappingURL=index.css.map */
