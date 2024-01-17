@@ -7,7 +7,7 @@ $bubble:#0077c5;
 $pepper: #c3ced5;
 $superBlue:#236dff;
 $superBlueLight:#3c7dff;
-$typeHeight: 80px;
+$typeHeight: 77px;
 $drawerWidth: 400px;
 $chipBg:rgba(0, 119, 197, 0);
 $chipHover:rgba(0, 119, 197, .1);
@@ -17,6 +17,7 @@ $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
 //placeholder
 $place: 60px;
 $teal: #05A4B5;
+$placeholder: #889298;
 $pink: rgba(215,39,146,.5);
 $lightPink: rgba(215,39,146,.05);
 
@@ -31,6 +32,10 @@ $scaleCurve: cubic-bezier(0.15, 1.4, 0.25, 1);
 $transitionCurve: cubic-bezier(0.35, 0, 0.5, 1);
 $disappearScaleCurve: cubic-bezier(0.35, 0, 1, 1);
 $disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
+
+//Disclaimer
+$disclaimerBG: #f4f5f8;
+$disclaimerTxt: #6b6c72;
 
 
 body {
@@ -421,7 +426,7 @@ button{cursor: pointer}
     font-size: 1em;
     opacity: 1;
     transform: scale(1);
-    transition: .6s $drawerEase;
+    transition: .4s $drawerEase;
     height: 51px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -473,4 +478,43 @@ button{cursor: pointer}
         font-family: avenirBold;
         margin: 20px 0;
     }
+}
+
+.TypeMessage {
+    position: relative;
+    input {
+        border: none;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        height: 100%;
+        outline: none;
+        font-family: avenirRegular;
+        font-size: 1.2em;
+        &::placeholder{ color: $placeholder }
+    }
+    .sendIt {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        background: #fff;
+        border: none;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border-radius: 40px;
+        &.active{ background: $bubble}
+    }
+}
+
+.Disclaimer {
+    font-size: .83em;
+    font-family: avenirRegular;
+    background: $disclaimerBG;
+    color: $disclaimerTxt;
+    text-align: center;
+    padding: 10px;
 }

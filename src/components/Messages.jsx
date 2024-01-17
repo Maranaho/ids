@@ -2,10 +2,10 @@ import { useState,useEffect,useRef } from "react"
 import { useTTState } from '../context'
 import WelcomeMsg from './WelcomeMsg'
 import Generating from './Generating'
-import writeoffgenerated from "../assets/svg/writeoffgenerated.svg"
-import aiwelcome from "../assets/svg/aiwelcome.svg"
 import compare from "../assets/svg/compare.svg"
+import aiwelcome from "../assets/svg/aiwelcome.svg"
 import sendAssistantMessage from "../utils/sendAssistantMessage"
+import writeoffgenerated from "../assets/svg/writeoffgenerated.svg"
 
 const generatedResponses = {
     writeoffgenerated,
@@ -121,7 +121,7 @@ const Messages = ()=>{
 
     useEffect(()=>{
             scrollCtnRef.current.scrollTop = scrollCtnRef.current.scrollHeight
-        },[messages,generating])
+        },[Object.keys(messages).length,generating])
     
     return (
         <div ref={scrollCtnRef} className={`Messages ${generating?"generating":""}`}>

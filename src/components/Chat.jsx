@@ -1,8 +1,8 @@
 import Messages from './Messages'
 import ChatHeader from './ChatHeader'
 import TypeMessage from './TypeMessage'
+import Disclaimer from './Disclaimer'
 import { useTTState } from '../context'
-import { useState } from "react"
 
 
 const Chat = ()=>{
@@ -13,6 +13,7 @@ const Chat = ()=>{
             <ChatHeader />
             <Messages />
             <TypeMessage />
+            <Disclaimer />
         </aside>
     )
 }

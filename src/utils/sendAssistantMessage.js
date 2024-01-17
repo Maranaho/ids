@@ -1,4 +1,3 @@
-import { v4 } from 'uuid'
 import aiMessages from "../data/aiMessages.json"
 const wait = 7000
 
@@ -7,7 +6,7 @@ const sendAssistantMessage = (dispatch,aiMsgIdx) =>{
     setTimeout(()=>dispatch({type:"GENERATING"}),1200)
         setTimeout(()=>{
             const msg = {
-                newMessageKey:v4(),
+                newMessageKey:new Date().getTime(),
                 sender: "assistant",
                 message: aiMessages[aiMsgKey].message,
                 chips: aiMessages[aiMsgKey].chips

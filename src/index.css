@@ -122,7 +122,7 @@ button {
   scroll-behavior: smooth;
   transition: height 0.8s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   overflow-y: scroll;
-  height: calc(100vh - 238px);
+  height: calc(100vh - 235px);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -182,7 +182,7 @@ button {
 
 .TypeMessage {
   border-top: 1px solid #c3ced5;
-  height: 80px;
+  height: 77px;
 }
 
 .Placeholder {
@@ -425,7 +425,7 @@ button {
   font-size: 1em;
   opacity: 1;
   transform: scale(1);
-  transition: 0.6s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+  transition: 0.4s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   height: 51px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -477,4 +477,50 @@ button {
   font-size: 2.2em;
   font-family: avenirBold;
   margin: 20px 0;
+}
+
+.TypeMessage {
+  position: relative;
+}
+.TypeMessage input {
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100%;
+  outline: none;
+  font-family: avenirRegular;
+  font-size: 1.2em;
+}
+.TypeMessage input::-moz-placeholder {
+  color: #889298;
+}
+.TypeMessage input::placeholder {
+  color: #889298;
+}
+.TypeMessage .sendIt {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  background: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+.TypeMessage .sendIt.active {
+  background: #0077c5;
+}
+
+.Disclaimer {
+  font-size: 0.83em;
+  font-family: avenirRegular;
+  background: #f4f5f8;
+  color: #6b6c72;
+  text-align: center;
+  padding: 10px;
 }/*# sourceMappingURL=index.css.map */
