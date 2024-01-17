@@ -15,7 +15,6 @@ $chipActive:rgba(0, 119, 197, .2);
 $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
 
 //placeholder
-$place: 60px;
 $teal: #05A4B5;
 $placeholder: #889298;
 $pink: rgba(215,39,146,.5);
@@ -215,12 +214,20 @@ button{cursor: pointer}
 
 
 .Placeholder {
-    margin: $place;
-    width: 100%;
-    height: calc(100% - $place * 2);
-    background: $lightPink;
-    border-radius: 20px;
-    border: 1px dashed $pink;
+    padding: 40px;
+    height: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    .pink {
+        height: 100%;
+        box-sizing: border-box;
+        background: $lightPink;
+        border-radius: 20px;
+        border: 1px dashed $pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }
 }
 
 .suggestions > span {
@@ -339,6 +346,7 @@ button{cursor: pointer}
     }
 }
 
+.Placeholder a,
 .sign {
     border: none;
     background: $superBlue;
@@ -348,6 +356,9 @@ button{cursor: pointer}
     min-width: 100px;
     font-weight: bold;
     font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+    font-family: avenirDemi;
     &:hover {background: $superBlueLight}
 }
 

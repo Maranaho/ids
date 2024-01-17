@@ -186,12 +186,20 @@ button {
 }
 
 .Placeholder {
-  margin: 60px;
-  width: 100%;
-  height: calc(100% - 120px);
+  padding: 40px;
+  height: 100%;
+  box-sizing: border-box;
+  flex: 1;
+}
+.Placeholder .pink {
+  height: 100%;
+  box-sizing: border-box;
   background: rgba(215, 39, 146, 0.05);
   border-radius: 20px;
   border: 1px dashed rgba(215, 39, 146, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .suggestions > span {
@@ -314,6 +322,7 @@ button {
   transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
 }
 
+.Placeholder a,
 .sign {
   border: none;
   background: #236dff;
@@ -323,7 +332,11 @@ button {
   min-width: 100px;
   font-weight: bold;
   font-size: 1.1em;
+  text-align: center;
+  text-decoration: none;
+  font-family: avenirDemi;
 }
+.Placeholder a:hover,
 .sign:hover {
   background: #3c7dff;
 }
