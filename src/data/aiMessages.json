@@ -1,0 +1,35 @@
+
+{
+  "1636066912346": {
+    "message": "As a freelancer, you can deduct business expenses like office supplies, equipment, and even a portion of your home expenses if you have a dedicated workspace.",
+    "chips": [
+      "Explore tax credits",
+      "Thorough tax records",
+      "Home office deductions"
+    ]
+  },
+  "1636066912348": {
+    "message": "Yes, you can deduct various expenses as a freelancer. Some common deductions include office supplies, equipment, and a portion of your home expenses if you have a dedicated workspace.",
+    "chips": [
+      "Business equipment deductions",
+      "Calculate home office deductions",
+      "Other freelancer deductions"
+    ]
+  },
+  "1636066912350": {
+    "message": "It depends, there are tax credits like the Earned Income Tax Credit (EITC) and the Child and Dependent Care Credit that you may be eligible for. It's essential to explore all available credits to maximize your tax benefits.",
+    "chips": [
+      "Qualify for EITC?",
+      "Child and Dependent Care Credit",
+      "Maximize tax benefits"
+    ]
+  },
+  "1636066912352": {
+    "message": "You're welcome! Keeping detailed records of your income and expenses will make tax filing smoother and help you take advantage of all eligible deductions.",
+    "chips": [
+      "Organize income records?",
+      "Efficient expense tracking",
+      "Tools for simplifying tax filing"
+    ]
+  }
+}

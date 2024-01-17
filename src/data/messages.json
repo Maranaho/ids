@@ -1,0 +1,54 @@
+{
+  "1642282100000": {
+    "sender": "user",
+    "message": "I recently started a freelance job. I have questions. How does this affect my taxes?"
+  },
+  "1642282150000": {
+    "sender": "user",
+    "message": "Are there specific deductions I can claim as a freelancer?"
+    
+  },
+  "1642282200000": {
+    "sender": "assistant",
+    "message": "When you start a new job, it can impact your taxes. Make sure to update your W-4 form with your employer to reflect your current tax situation. This ensures the right amount of taxes is withheld from your paycheck."
+  },
+  "1642282250000": {
+    "sender": "user",
+    "message": "Are my services expensive?"
+  },
+  "1642283100000": {
+    "sender": "assistant",
+    "message": "Here is a breakdown of you prices compared to the market:",
+    "generated":"compare"
+  },
+  "1642283200000": {
+    "sender": "user",
+    "message": "Are there any specific deductions I can claim?"
+  },
+  "1642283300000": {
+    "sender": "assistant",
+    "message": "Certainly! As an employee, you may be eligible for deductions like unreimbursed job expenses, education expenses, and even certain home office expenses if you work from home. Keep track of your expenses and consult a tax professional for personalized advice."
+  },
+  "1642283400000": {
+    "sender": "user",
+    "message": "Tax Write offs"
+  },
+  "1642283450000": {
+    "sender": "assistant",
+    "message": "You might find this useful:",
+    "generated":"writeoffgenerated"
+  },
+  "1642283455500": {
+    "sender": "user",
+    "message": "Ok sweet."
+  },
+  "1642283455000": {
+    "sender": "user",
+    "message": "Tax credits for employees?"
+  },
+  "1642283500000": {
+    "sender": "assistant",
+    "message": "There are tax credits available, such as the Child Tax Credit and the American Opportunity Credit for education expenses. Make sure to explore these credits to maximize your tax benefits. Do you have any specific questions about your job and taxes?",
+    "chips": ["Home office deductions", "Travel expenses", "Technology and software costs"]
+  }
+}

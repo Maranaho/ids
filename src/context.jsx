@@ -1,13 +1,16 @@
 import React from "react"
-import messages from "./messages.json"
+import messages from "./data/messages.json"
+import aiMessages from "./data/aiMessages.json"
 
 let initialTTState = {
   isIntuitEmployee:false,
-  showAssist:false,
+  showAssist:true,
   org:'@intuit.com',
   devName:'maranaho',
   user:null,
-  messages:{...messages}
+  aiMsgIdx:0,
+  messages:{...messages},
+  generating:false,
 }
 
 const TTContext = React.createContext()
@@ -15,22 +18,25 @@ const TTContext = React.createContext()
 function ttReducer(state, action) {
   switch (action.type) {
 
-    case 'IS_GENERATING': {
-      let IS_GENERATING = {...state}
-      IS_GENERATING = action.payload
-      return IS_GENERATING
+    case 'GENERATING': {
+      let GENERATING = {...state}
+      GENERATING.generating = true
+      if(GENERATING.aiMsgIdx < Object.keys(aiMessages).length -1) GENERATING.aiMsgIdx++ 
+      else GENERATING.aiMsgIdx = 0
+      return GENERATING
     }
-
-    case 'SEND_MESSAGE': {
-      let SEND_MESSAGE = {...state}
-      const { newMessageKey,message } = action.payload
-      SEND_MESSAGE.messages[newMessageKey] = message
-      return SEND_MESSAGE
+    
+    case 'NEW_MESSAGE': {
+      let NEW_MESSAGE = {...state}
+      const { newMessageKey,message,sender,chips } = action.payload
+      NEW_MESSAGE.messages[newMessageKey] = {message,sender,chips}
+      NEW_MESSAGE.generating = false
+      return NEW_MESSAGE
     }
 
     case 'SHOW_ASSIST': {
       let SHOW_ASSIST = {...state}
-      // SHOW_ASSIST.showAssist = action.payload
+      SHOW_ASSIST.showAssist = action.payload
       return SHOW_ASSIST
     }
     

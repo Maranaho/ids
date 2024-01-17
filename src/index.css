@@ -1,19 +1,19 @@
 @import './assets/font/font.css';
 body {
   margin: 0;
-  font-family: avenirRegular, "sans-serif";
-  overscroll-behavior: none;
+  color: #25292d;
   font-size: 14px;
   overflow-x: hidden;
-  color: #3c4349;
-}
-
-button {
-  cursor: pointer;
+  overscroll-behavior: none;
+  font-family: avenirRegular, "sans-serif";
 }
 
 p {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .intuit {
@@ -77,15 +77,6 @@ p {
   margin-right: 0;
 }
 
-.ChatContent {
-  width: 400px;
-  padding: 20px;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  height: calc(100vh - 260px);
-  overflow-y: scroll !important;
-}
-
 .Lottie {
   width: 20px;
   margin-right: 5px;
@@ -95,6 +86,13 @@ p {
 .Generating {
   display: flex;
   align-items: center;
+}
+
+.Generating {
+  margin-top: 20px;
+}
+.Generating span {
+  font-family: avenirMedium;
 }
 
 .ChatHeader {
@@ -121,16 +119,24 @@ p {
 }
 
 .Messages {
+  scroll-behavior: smooth;
+  transition: height 0.8s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   overflow-y: scroll;
   height: calc(100vh - 238px);
   padding: 20px;
   box-sizing: border-box;
 }
+.Messages.generating {
+  padding-bottom: 21px;
+}
+.Messages img {
+  cursor: pointer;
+}
 .Messages article {
   font-family: avenirMedium;
   line-height: 1.4em;
 }
-.Messages article span {
+.Messages article span:not(.intro) {
   font-family: avenirDemi;
   opacity: 0.8;
   display: inline-block;
@@ -149,13 +155,14 @@ p {
   justify-content: flex-end;
   padding-top: 4px;
 }
-.Messages article.user + .user p {
-  border-radius: 16px 16px 3px;
+.Messages article.user.makeMeRound p {
+  border-radius: 16px;
 }
 .Messages article.user p {
   background: #0077c5;
   color: #fff;
   border-radius: 16px;
+  border-radius: 16px 16px 3px;
   padding: 12px;
   display: inline-block;
 }
@@ -420,6 +427,10 @@ p {
   transform: scale(1);
   transition: 0.6s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   height: 51px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  overflow: hidden;
 }
 .Chip.firstPaint {
   opacity: 0;
@@ -434,13 +445,14 @@ p {
   opacity: 0;
   margin-top: 0 !important;
 }
-.Chip.toBubble {
-  border: 0 solid #0077c5;
-  background: #0077c5;
+.Chip.toBubble:hover, .Chip.toBubble:active, .Chip.toBubble {
   color: #fff;
-  border-radius: 16px 16px 3px;
   padding: 12px;
+  background: #0077c5;
   display: inline-block;
+  border: 0 solid #0077c5;
+  border-radius: 16px 16px 3px;
+  cursor: text;
 }
 .Chip:not(:first-child) {
   margin-top: 5px;
@@ -450,4 +462,19 @@ p {
 }
 .Chip:active {
   background: rgba(0, 119, 197, 0.2);
+}
+
+.WelcomeMsg p {
+  margin-bottom: 10px;
+}
+.WelcomeMsg p:first-child {
+  display: flex;
+}
+.WelcomeMsg p:first-child span:not(:last-child) {
+  margin-right: 4px;
+}
+.WelcomeMsg h3 {
+  font-size: 2.2em;
+  font-family: avenirBold;
+  margin: 20px 0;
 }/*# sourceMappingURL=index.css.map */

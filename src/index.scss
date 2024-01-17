@@ -1,48 +1,48 @@
 @import './assets/font/font.css';
 
+$txt:#25292d;
 $blue:#0575DD;
+$tofu:#f4f4f0;
 $bubble:#0077c5;
+$pepper: #c3ced5;
+$superBlue:#236dff;
+$superBlueLight:#3c7dff;
+$typeHeight: 80px;
+$drawerWidth: 400px;
 $chipBg:rgba(0, 119, 197, 0);
 $chipHover:rgba(0, 119, 197, .1);
 $chipActive:rgba(0, 119, 197, .2);
-$superBlue:#236dff;
-$superBlueLight:#3c7dff;
-$tofu: #f4f4f0;
-$pepper: #c3ced5;
 $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
-$typeHeight: 80px;
-$drawerWidth: 400px;
-$txt: #3c4349;
 
 //placeholder
 $place: 60px;
+$teal: #05A4B5;
 $pink: rgba(215,39,146,.5);
 $lightPink: rgba(215,39,146,.05);
-$teal: #05A4B5;
 
 //slider colors
-$electric: #41DDFF;
-$green: #2ECB80;
 $grey: #A8A8A8;
+$green: #2ECB80;
+$electric: #41DDFF;
 
 //Chip
-$scaleCurve: cubic-bezier(0.15, 1.4, 0.25, 1);
 $opacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
+$scaleCurve: cubic-bezier(0.15, 1.4, 0.25, 1);
 $transitionCurve: cubic-bezier(0.35, 0, 0.5, 1);
-$disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
 $disappearScaleCurve: cubic-bezier(0.35, 0, 1, 1);
+$disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
 
 
 body {
     margin: 0;
-    font-family: avenirRegular,"sans-serif";
-    overscroll-behavior: none;
+    color:$txt;
     font-size: 14px;
     overflow-x: hidden;
-    color:$txt;
+    overscroll-behavior: none;
+    font-family: avenirRegular,"sans-serif";
 }
-button{cursor: pointer}
 p{margin: 0}
+button{cursor: pointer}
 
 .intuit {
     display: flex;
@@ -97,14 +97,7 @@ p{margin: 0}
     justify-content: space-between;
     &.showAssist{margin-right: 0}
 }
-.ChatContent {
-    width: $drawerWidth;
-    padding: 20px;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    height: calc(100vh - 260px);
-    overflow-y: scroll !important;
-}
+
 
 .Lottie {
     width:20px;
@@ -115,6 +108,12 @@ p{margin: 0}
 .Generating {
     display: flex;
     align-items: center;
+}
+.Generating {
+    margin-top: 20px;
+    span {
+        font-family: avenirMedium;
+    }
 }
 
 .ChatHeader {
@@ -139,14 +138,18 @@ p{margin: 0}
 }
 
 .Messages {
+    &.generating{ padding-bottom: 21px}
+    scroll-behavior: smooth;
+    transition: height .8s $drawerEase;
     overflow-y: scroll;
     height: calc(100vh - (158px + $typeHeight));
     padding: 20px;
     box-sizing: border-box;
+    img{ cursor: pointer}
     article{
         font-family: avenirMedium;
         line-height: 1.4em;
-        span {
+        span:not(.intro) {
             font-family: avenirDemi;
             opacity: .8;
             display: inline-block;
@@ -163,14 +166,14 @@ p{margin: 0}
             display: flex;
             justify-content: flex-end;
             padding-top: 4px;
-            & + .user p {
-
-                border-radius: 16px 16px 3px;
+            &.makeMeRound p {
+                border-radius: 16px;
             }
             p {
                 background: $bubble;
                 color: #fff;
                 border-radius: 16px;
+                border-radius: 16px 16px 3px;
                 padding: 12px;
                 display: inline-block;
             }
@@ -420,6 +423,10 @@ p{margin: 0}
     transform: scale(1);
     transition: .6s $drawerEase;
     height: 51px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    overflow: hidden;
     &.firstPaint{
         opacity: 0;
         transform: scale(.8);
@@ -436,16 +443,34 @@ p{margin: 0}
         margin-top: 0!important;
     }
     
+    &.toBubble:hover,
+    &.toBubble:active,
     &.toBubble {
-        border: 0 solid $bubble;
-        background: $bubble;
         color: #fff;
-        border-radius: 16px 16px 3px;
         padding: 12px;
+        background: $bubble;
         display: inline-block;
+        border: 0 solid $bubble;
+        border-radius: 16px 16px 3px;
+        cursor: text;
     }
     
     &:not(:first-child){margin-top: 5px}
     &:hover:not(.toBubble) { background: $chipHover }
     &:active { background: $chipActive }
+}
+
+.WelcomeMsg {
+    p {
+        margin-bottom: 10px;
+        &:first-child {
+            display: flex;
+            span:not(:last-child){ margin-right: 4px }
+        }
+    }
+    h3 {
+        font-size: 2.2em;
+        font-family: avenirBold;
+        margin: 20px 0;
+    }
 }
