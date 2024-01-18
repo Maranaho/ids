@@ -19,7 +19,7 @@
   "1642283100000": {
     "sender": "assistant",
     "message": "Here is a breakdown of you prices compared to the market:",
-    "generated":"compare"
+    "generated":"graph"
   },
   "1642283200000": {
     "sender": "user",

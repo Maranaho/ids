@@ -2,17 +2,20 @@ import { useState,useEffect,useRef } from "react"
 import { useTTState } from '../context'
 import WelcomeMsg from './WelcomeMsg'
 import Generating from './Generating'
+import Compare from './Compare'
 import compare from "../assets/svg/compare.svg"
 import aiwelcome from "../assets/svg/aiwelcome.svg"
 import sendAssistantMessage from "../utils/sendAssistantMessage"
 import writeoffgenerated from "../assets/svg/writeoffgenerated.svg"
 import invoice from "../assets/svg/invoice.svg"
+import graph from "../assets/svg/graph.svg"
 
 const generatedResponses = {
     writeoffgenerated,
     compare,
     invoice,
-    aiwelcome
+    aiwelcome,
+    graph
 }
 
 const Chip =({
@@ -102,7 +105,8 @@ const Message = ({messageItem,msgKey}) =>{
       <article className={`${sender} ${submitted?"submitted":""} ${makeMeRound ? "makeMeRound":""}`}>
         {isAi && <span>Intuit Assist</span>}
         <p>{message}</p>
-        {generated&&<img src={generatedResponses[generated]}/>}
+        {generated&&generated!=="compare"&&<img src={generatedResponses[generated]}/>}
+        {generated&&generated==="compare"&&<Compare />}
         {chips && (
             <Chips
                 chips={chips}

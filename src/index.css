@@ -186,7 +186,7 @@ button {
 }
 
 .Placeholder {
-  padding: 200px;
+  padding: 30px;
   height: 100%;
   box-sizing: border-box;
   flex: 1;
@@ -194,9 +194,8 @@ button {
 .Placeholder .pink {
   height: 100%;
   box-sizing: border-box;
-  background: rgba(215, 39, 145, 0.02);
-  border-radius: 20px;
-  border: 1px dashed rgba(215, 39, 146, 0.3);
+  background: rgba(215, 39, 145, 0.04);
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -546,4 +545,85 @@ button {
   color: #6b6c72;
   text-align: center;
   padding: 10px;
+}
+
+.Card {
+  padding: 20px;
+  border: 1px solid #c3ced5;
+  border-radius: 8px;
+}
+
+.Compare {
+  text-align: center;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.Compare h3 {
+  font-family: avenirMedium;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+.Compare h4 {
+  margin: 0;
+  font-family: avenirMedium;
+  font-size: 1em;
+  color: #ff6a00;
+  opacity: 0;
+}
+.Compare h4.low {
+  opacity: 1;
+}
+.Compare .bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100px;
+}
+.Compare .bars div {
+  box-sizing: border-box;
+  width: 12px;
+  transition: height 2s cubic-bezier(0.7, 0, 0, 1.01);
+  border-radius: 5px 5px 3px 3px;
+  background: #c3ced5;
+  position: relative;
+}
+.Compare .bars div.low {
+  background: #ff6a00;
+}
+.Compare .bars div.bingo {
+  opacity: 0.5;
+}
+.Compare .bars div:hover {
+  opacity: 0.7;
+}
+.Compare .bars div:hover small {
+  opacity: 1;
+}
+.Compare .bars div:not(:last-child) {
+  margin-right: 2px;
+}
+.Compare .bars div small {
+  position: absolute;
+  bottom: -20px;
+  color: #6B6C72;
+  left: 0;
+  font-size: 0.7em;
+  opacity: 0;
+}
+.Compare .txt {
+  padding-top: 0;
+  transition: 0.8s cubic-bezier(0.7, 0, 0, 1.01);
+}
+.Compare .txt.grow {
+  padding-top: 25px;
+}
+.Compare .black {
+  font-family: avenirDemi;
+  margin: 10px 0;
+}
+.Compare .grey {
+  color: #6B6C72;
+}
+.Compare .green {
+  color: #2ECB80;
 }/*# sourceMappingURL=index.css.map */

@@ -2,12 +2,15 @@
 
 $txt:#25292d;
 $blue:#0575DD;
+$green: #12C050;
 $blueHover:#177edf;
+$darkPepper: #6B6C72;
 $tofu:#f4f4f0;
 $bubble:#0077c5;
 $pepper: #c3ced5;
 $superBlue:#236dff;
 $superBlueLight:#3c7dff;
+$orange:#ff6a00;
 $typeHeight: 77px;
 $drawerWidth: 400px;
 $chipBg:rgba(0, 119, 197, 0);
@@ -19,7 +22,7 @@ $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
 $teal: #05A4B5;
 $placeholder: #889298;
 $pink: rgba(215,39,146,.3);
-$lightPink: rgba(215, 39, 145, 0.02);
+$lightPink: rgba(215, 39, 145, 0.04);
 
 //slider colors
 $grey: #A8A8A8;
@@ -36,6 +39,10 @@ $disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
 //Disclaimer
 $disclaimerBG: #f4f5f8;
 $disclaimerTxt: #6b6c72;
+
+//Card
+$cardRadius: 8px;
+$barEase: cubic-bezier(0.7, 0, 0, 1.01);
 
 body {
     margin: 0;
@@ -214,7 +221,7 @@ button{cursor: pointer}
 
 
 .Placeholder {
-    padding: 200px;
+    padding: 30px;
     height: 100%;
     box-sizing: border-box;
     flex: 1;
@@ -222,8 +229,8 @@ button{cursor: pointer}
         height: 100%;
         box-sizing: border-box;
         background: $lightPink;
-        border-radius: 20px;
-        border: 1px dashed $pink;
+        border-radius: 10px;
+        // border: 1px dashed $pink;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -536,4 +543,69 @@ button{cursor: pointer}
     color: $disclaimerTxt;
     text-align: center;
     padding: 10px;
+}
+
+.Card {
+    padding: 20px;
+    border: 1px solid $pepper;
+    border-radius: $cardRadius;
+}
+
+.Compare {
+    text-align: center;
+    margin: 20px 0;
+    overflow: hidden;
+    h3 {
+        font-family: avenirMedium;
+        font-size: 1.1em;
+        margin: 10px 0;
+    }
+    h4 {
+        margin: 0;
+        font-family: avenirMedium;
+        font-size: 1em;
+        color: $orange;
+        opacity: 0;
+        &.low{opacity: 1}
+    }
+    .bars {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100px;
+        div {
+            box-sizing: border-box;
+            width: 12px;
+            transition: height 2s $barEase;
+            border-radius: 5px 5px 3px 3px;
+            background: $pepper;
+            position: relative;
+            &.low{background: $orange}
+            &.bingo{opacity: .5}
+            &:hover {
+                opacity: .7;
+                small {opacity: 1}
+            }
+            &:not(:last-child){ margin-right: 2px }
+            small {
+                position: absolute;
+                bottom: -20px;
+                color: $darkPepper;
+                left: 0;
+                font-size: .7em;
+                opacity: 0;
+            }
+        }
+    }
+    .txt{
+        padding-top: 0;
+        transition: .8s $barEase;
+        &.grow{ padding-top: 25px }
+    }
+    .black {
+        font-family: avenirDemi;
+        margin: 10px 0;
+    }
+    .grey{ color: $darkPepper}
+    .green{ color: $green}
 }
