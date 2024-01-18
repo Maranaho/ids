@@ -4,7 +4,7 @@ import aiMessages from "./data/aiMessages.json"
 
 let initialTTState = {
   isIntuitEmployee:false,
-  showAssist:true,
+  showAssist:false,
   org:'@intuit.com',
   devName:'maranaho',
   user:null,

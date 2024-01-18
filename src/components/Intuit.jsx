@@ -25,7 +25,8 @@ const Intuit = ()=>{
                   <Route path='*' element={<p>404</p>} />
 
                   {/* Intuit Assist */}
-                  <Route path="/" element={<Placeholder/>}/>
+                  <Route path="/" element={<Turbi/>}/>
+                  {/* <Route path="/" element={<Placeholder/>}/> */}
                   <Route path="/rive" element={<Turbi/>}/>
                 </Routes>
                 <Chat/>
