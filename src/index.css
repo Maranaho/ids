@@ -186,7 +186,7 @@ button {
 }
 
 .Placeholder {
-  padding: 40px;
+  padding: 200px;
   height: 100%;
   box-sizing: border-box;
   flex: 1;
@@ -194,9 +194,9 @@ button {
 .Placeholder .pink {
   height: 100%;
   box-sizing: border-box;
-  background: rgba(215, 39, 146, 0.05);
+  background: rgba(215, 39, 145, 0.02);
   border-radius: 20px;
-  border: 1px dashed rgba(215, 39, 146, 0.5);
+  border: 1px dashed rgba(215, 39, 146, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,7 +322,7 @@ button {
   transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
 }
 
-.Placeholder a,
+.RiveDemoLink a,
 .sign {
   border: none;
   background: #236dff;
@@ -336,9 +336,19 @@ button {
   text-decoration: none;
   font-family: avenirDemi;
 }
-.Placeholder a:hover,
+.RiveDemoLink a:hover,
 .sign:hover {
   background: #3c7dff;
+}
+
+.RiveDemoLink {
+  padding: 30px;
+}
+.RiveDemoLink a {
+  background: #0575DD;
+}
+.RiveDemoLink a:hover {
+  background: #177edf;
 }
 
 @keyframes appear {

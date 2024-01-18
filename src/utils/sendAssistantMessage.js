@@ -6,11 +6,11 @@ const sendAssistantMessage = (dispatch,aiMsgIdx) =>{
     setTimeout(()=>dispatch({type:"GENERATING"}),1200)
         setTimeout(()=>{
             const msg = {
+                ...aiMessages[aiMsgKey],
                 newMessageKey:new Date().getTime(),
-                sender: "assistant",
-                message: aiMessages[aiMsgKey].message,
-                chips: aiMessages[aiMsgKey].chips
+                sender: "assistant"
             }
+  
             dispatch({type:"NEW_MESSAGE",payload:msg})
         },wait)
 }

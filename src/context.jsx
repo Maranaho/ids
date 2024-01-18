@@ -28,8 +28,7 @@ function ttReducer(state, action) {
     
     case 'NEW_MESSAGE': {
       let NEW_MESSAGE = {...state}
-      const { newMessageKey,message,sender,chips } = action.payload
-      NEW_MESSAGE.messages[newMessageKey] = {message,sender,chips}
+      NEW_MESSAGE.messages[action.payload.newMessageKey] = {...action.payload}
       NEW_MESSAGE.generating = false
       return NEW_MESSAGE
     }

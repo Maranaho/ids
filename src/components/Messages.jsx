@@ -6,10 +6,12 @@ import compare from "../assets/svg/compare.svg"
 import aiwelcome from "../assets/svg/aiwelcome.svg"
 import sendAssistantMessage from "../utils/sendAssistantMessage"
 import writeoffgenerated from "../assets/svg/writeoffgenerated.svg"
+import invoice from "../assets/svg/invoice.svg"
 
 const generatedResponses = {
     writeoffgenerated,
     compare,
+    invoice,
     aiwelcome
 }
 
@@ -120,7 +122,10 @@ const Messages = ()=>{
     const scrollCtnRef = useRef(null)
 
     useEffect(()=>{
-            scrollCtnRef.current.scrollTop = scrollCtnRef.current.scrollHeight
+            const clear = setTimeout(()=>{
+                scrollCtnRef.current.scrollTop = scrollCtnRef.current.scrollHeight
+            },10)
+            return ()=> clearTimeout(clear)
         },[Object.keys(messages).length,generating])
     
     return (

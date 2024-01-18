@@ -2,6 +2,7 @@
 
 $txt:#25292d;
 $blue:#0575DD;
+$blueHover:#177edf;
 $tofu:#f4f4f0;
 $bubble:#0077c5;
 $pepper: #c3ced5;
@@ -17,8 +18,8 @@ $drawerEase: cubic-bezier(0.74, 0.01, 0.16, 0.99);
 //placeholder
 $teal: #05A4B5;
 $placeholder: #889298;
-$pink: rgba(215,39,146,.5);
-$lightPink: rgba(215,39,146,.05);
+$pink: rgba(215,39,146,.3);
+$lightPink: rgba(215, 39, 145, 0.02);
 
 //slider colors
 $grey: #A8A8A8;
@@ -35,7 +36,6 @@ $disappearOpacityCurve: cubic-bezier(0.35, 0, 0.5, 1);
 //Disclaimer
 $disclaimerBG: #f4f5f8;
 $disclaimerTxt: #6b6c72;
-
 
 body {
     margin: 0;
@@ -214,7 +214,7 @@ button{cursor: pointer}
 
 
 .Placeholder {
-    padding: 40px;
+    padding: 200px;
     height: 100%;
     box-sizing: border-box;
     flex: 1;
@@ -346,7 +346,7 @@ button{cursor: pointer}
     }
 }
 
-.Placeholder a,
+.RiveDemoLink a,
 .sign {
     border: none;
     background: $superBlue;
@@ -360,6 +360,14 @@ button{cursor: pointer}
     text-decoration: none;
     font-family: avenirDemi;
     &:hover {background: $superBlueLight}
+}
+.RiveDemoLink {
+    padding: 30px;
+    
+    a {
+        background: $blue;
+        &:hover {background: $blueHover}
+    }
 }
 
 
