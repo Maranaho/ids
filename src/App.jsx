@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { HashRouter } from "react-router-dom"
 import { useTTState } from './context'
 
-import SignIn from './components/SignIn'
-import Intuit from "./components/Intuit"
-import SignOut from './components/SignOut'
+// import SignIn from './components/SignIn'
+import IDS from "./components/IDS"
+import GenUXSignInAndOut from './components/GenUXSignInAndOut'
 import useAuth from './hooks/useAuth'
 
 const App = ()=>{
@@ -32,9 +32,9 @@ useEffect(getUser,[user])
   return (
     <HashRouter>
         <main className="App">
-          {user&&!isIntuitEmployee&&<SignOut/>}
-          {user&&isIntuitEmployee&&<Intuit/>}
-          {!user&&<SignIn/>}
+          {user&&!isIntuitEmployee&&<GenUXSignInAndOut isIn/>}
+          {user&&isIntuitEmployee&&<IDS/>}
+          {!user&&<GenUXSignInAndOut />}
         </main>
     </HashRouter>
   )

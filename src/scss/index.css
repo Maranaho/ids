@@ -1,4 +1,4 @@
-@import './assets/font/font.css';
+@import '../assets/font/font.css';
 body {
   margin: 0;
   color: #25292d;
@@ -22,6 +22,7 @@ button {
 }
 .intuit .main {
   flex: 1;
+  display: flex;
 }
 
 .LeftNav {
@@ -33,17 +34,18 @@ button {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  height: calc(100vh - 100px);
+  height: 100vh;
+  flex: 1;
 }
 
 .Topbar {
   display: flex;
   justify-content: space-between;
-  background: url("./assets/svg/borders-top.svg");
+  background: url("../assets/svg/borders-top.svg");
   position: relative;
 }
 
-.AccessPointButton {
+button.AccessPointButton {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -72,9 +74,11 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0);
 }
 .Chat.showAssist {
   margin-right: 0;
+  box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.1);
 }
 
 .Lottie {
@@ -122,7 +126,7 @@ button {
   scroll-behavior: smooth;
   transition: height 0.8s cubic-bezier(0.74, 0.01, 0.16, 0.99);
   overflow-y: scroll;
-  height: calc(100vh - 235px);
+  height: calc(100vh - 167px);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -178,11 +182,6 @@ button {
 }
 .Messages ::-webkit-scrollbar-thumb:hover {
   background: #818181;
-}
-
-.TypeMessage {
-  border-top: 1px solid #c3ced5;
-  height: 77px;
 }
 
 .Placeholder {
@@ -335,9 +334,24 @@ button {
   text-decoration: none;
   font-family: avenirDemi;
 }
+.RiveDemoLink a.mini,
+.sign.mini {
+  padding: 5px;
+  font-size: 0.8em;
+  min-width: inherit;
+}
 .RiveDemoLink a:hover,
 .sign:hover {
   background: #3c7dff;
+}
+.RiveDemoLink a.invert,
+.sign.invert {
+  color: #236dff;
+  background: #fff;
+}
+.RiveDemoLink a.invert:hover,
+.sign.invert:hover {
+  background: #c5d8ff;
 }
 
 .RiveDemoLink {
@@ -364,7 +378,7 @@ button {
   padding: 40px 0 0 800px;
   height: 100vh;
   box-sizing: border-box;
-  background: url("./assets/images/guitar.jpg") no-repeat left top;
+  background: url("../assets/images/guitar.jpg") no-repeat left top;
   animation: appear 0.6s ease 0.8s forwards;
 }
 .SignOut .ialogo,
@@ -374,7 +388,7 @@ button {
 }
 .SignOut > div,
 .SignIn > div {
-  background: url("./assets/svg/signtitle.svg") no-repeat left top;
+  background: url("../assets/svg/signtitle.svg") no-repeat left top;
 }
 .SignOut > div h1, .SignOut > div p,
 .SignIn > div h1,
@@ -393,7 +407,7 @@ button {
 }
 
 .SignOut > div {
-  background: url("./assets/svg/nonintuit.svg") no-repeat left top;
+  background: url("../assets/svg/nonintuit.svg") no-repeat left top;
 }
 
 @keyframes chip_opacity {
@@ -503,12 +517,14 @@ button {
 
 .TypeMessage {
   position: relative;
+  border-top: 1px solid #c3ced5;
+  height: 77px;
 }
 .TypeMessage input {
   border: none;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 20px 70px 20px 20px;
   height: 100%;
   outline: none;
   font-family: avenirRegular;
@@ -626,4 +642,151 @@ button {
 }
 .Compare .green {
   color: #2ECB80;
+}
+
+.GenUXSignInAndOut {
+  height: 100vh;
+  background: linear-gradient(90deg, #246DFF, #0151F2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  color: #fff;
+  opacity: 0;
+  animation: appear 0.6s ease 0.8s forwards;
+}
+.GenUXSignInAndOut h1 {
+  font-family: avenirBold;
+  font-size: 5em;
+}
+.GenUXSignInAndOut p {
+  margin-bottom: 10px;
+}
+.GenUXSignInAndOut .idsmark {
+  position: absolute;
+  right: 0;
+  top: calc(50vh - 341px);
+}
+.GenUXSignInAndOut > div {
+  width: 600px;
+}
+
+.GenUX {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.GenTopNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.GenTopNav img {
+  cursor: pointer;
+}
+.GenTopNav .sign {
+  opacity: 1;
+  transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+}
+.GenTopNav .sign.hide {
+  opacity: 0;
+  cursor: default;
+}
+
+.RoadMap {
+  padding: 20px 40px;
+  box-sizing: border-box;
+  background: #F9FAFB;
+  width: 100vw;
+  transition: 1s cubic-bezier(0.74, 0.01, 0.16, 0.99);
+  height: 100vh;
+  overflow: hidden;
+}
+.RoadMap.showAssist {
+  width: calc(100vw - 400px);
+}
+.RoadMap h1 {
+  font-family: avenirBold;
+  font-size: 4.5em;
+  line-height: 1.3em;
+  margin: 70px 0 0 0;
+}
+.RoadMap small {
+  color: #989d9f;
+  margin-left: 4px;
+}
+
+.Todos {
+  display: flex;
+  margin-top: 40px;
+  width: 100vw;
+  overflow-x: scroll;
+}
+.Todos .Category {
+  width: 350px;
+}
+.Todos .Category h2 {
+  font-family: avenirDemi;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+.Todos .Category img {
+  cursor: pointer;
+}
+.Todos .Category:not(:last-child) {
+  margin-right: 15px;
+}
+.Todos .Project {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.Todos .Project > article {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+}
+.Todos .Project .SuggestionChip .Chips {
+  width: 100%;
+  box-sizing: border-box;
+}
+.Todos .Project .Workbench {
+  justify-content: flex-start;
+}
+.Todos .Project .Workbench img {
+  display: block;
+  width: 320px;
+  transform: translateX(-15px);
+}
+.Todos .Project .componentName {
+  font-family: avenirDemi;
+  color: #FF4785;
+  text-align: left;
+  display: block;
+  padding-top: 10px;
+}
+.Todos .Project .componentName,
+.Todos .Project article {
+  width: 100%;
+}
+.Todos .Project:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.projects {
+  height: calc(100vh - 274px);
+  overflow-y: scroll;
+}
+.projects ::-webkit-scrollbar {
+  width: 1px;
+}
+.projects ::-webkit-scrollbar-thumb:hover,
+.projects ::-webkit-scrollbar-thumb,
+.projects ::-webkit-scrollbar-track {
+  background: transparent;
 }/*# sourceMappingURL=index.css.map */

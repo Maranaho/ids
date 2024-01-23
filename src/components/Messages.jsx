@@ -18,7 +18,7 @@ const generatedResponses = {
     graph
 }
 
-const Chip =({
+export const Chip =({
     idx,
     chip,
     gone,
@@ -46,7 +46,7 @@ const Chip =({
     )
 }
 
-const Chips = ({
+export const Chips = ({
         chips,
         msgKey,
         submitted,

@@ -1,4 +1,4 @@
-@import './assets/font/font.css';
+@import '../assets/font/font.css';
 
 $txt:#25292d;
 $blue:#0575DD;
@@ -44,6 +44,10 @@ $disclaimerTxt: #6b6c72;
 $cardRadius: 8px;
 $barEase: cubic-bezier(0.7, 0, 0, 1.01);
 
+//IDS bg
+$ids1: #246DFF;
+$ids2: #0151F2;
+
 body {
     margin: 0;
     color:$txt;
@@ -58,7 +62,10 @@ button{cursor: pointer}
 .intuit {
     display: flex;
     width: 100vw;
-    .main{ flex:1 }
+    .main{
+        flex:1;
+        display: flex;
+    }
 }
 .LeftNav {
     height: 100vh;
@@ -68,17 +75,18 @@ button{cursor: pointer}
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    height: calc(100vh - 100px);
+    height: 100vh;
+    flex:1;
 }
 
 .Topbar {
     display: flex;
     justify-content: space-between;
-    background: url("./assets/svg/borders-top.svg");
+    background: url("../assets/svg/borders-top.svg");
     position: relative;
 }
 
-.AccessPointButton {
+button.AccessPointButton {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -106,7 +114,11 @@ button{cursor: pointer}
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    &.showAssist{margin-right: 0}
+    box-shadow: 0 0 80px 0 rgba(0,0,0,0);
+    &.showAssist{
+        margin-right: 0;
+        box-shadow: 0 0 80px 0 rgba(0,0,0,.1);
+    }
 }
 
 
@@ -153,7 +165,7 @@ button{cursor: pointer}
     scroll-behavior: smooth;
     transition: height .8s $drawerEase;
     overflow-y: scroll;
-    height: calc(100vh - (158px + $typeHeight));
+    height: calc(100vh - (90px + $typeHeight));
     padding: 20px;
     box-sizing: border-box;
     img{ cursor: pointer}
@@ -212,11 +224,6 @@ button{cursor: pointer}
     background: #818181;
     }
 
-}
-
-.TypeMessage {
-    border-top: 1px solid $pepper;
-    height: $typeHeight;
 }
 
 
@@ -366,7 +373,17 @@ button{cursor: pointer}
     text-align: center;
     text-decoration: none;
     font-family: avenirDemi;
+    &.mini {
+        padding: 5px;
+        font-size: .8em;
+        min-width: inherit;
+    }
     &:hover {background: $superBlueLight}
+    &.invert {
+        color:$superBlue;
+        background: #fff;
+        &:hover {background: #c5d8ff}
+    }
 }
 .RiveDemoLink {
     padding: 30px;
@@ -389,14 +406,14 @@ button{cursor: pointer}
     padding: 40px 0 0 800px;
     height: 100vh;
     box-sizing: border-box;
-    background: url("./assets/images/guitar.jpg") no-repeat left top;
+    background: url("../assets/images/guitar.jpg") no-repeat left top;
     animation: appear .6s ease .8s forwards;
     .ialogo{
         display: block;
         margin-bottom: 150px;
     }
     > div {
-        background: url("./assets/svg/signtitle.svg") no-repeat left top;
+        background: url("../assets/svg/signtitle.svg") no-repeat left top;
         h1,p {
             color: transparent;
             margin: 0;
@@ -409,7 +426,7 @@ button{cursor: pointer}
     }
 }
 
-.SignOut > div { background: url("./assets/svg/nonintuit.svg") no-repeat left top }
+.SignOut > div { background: url("../assets/svg/nonintuit.svg") no-repeat left top }
 
 
 @keyframes chip_opacity {
@@ -508,11 +525,13 @@ button{cursor: pointer}
 
 .TypeMessage {
     position: relative;
+    border-top: 1px solid $pepper;
+    height: $typeHeight;
     input {
         border: none;
         width: 100%;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 20px 70px 20px 20px;
         height: 100%;
         outline: none;
         font-family: avenirRegular;
@@ -608,4 +627,140 @@ button{cursor: pointer}
     }
     .grey{ color: $darkPepper}
     .green{ color: $green}
+}
+
+.GenUXSignInAndOut {
+    height: 100vh;
+    background: linear-gradient(90deg,$ids1,$ids2);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    color: #fff;
+    opacity: 0;
+    animation: appear .6s ease .8s forwards;
+    h1 {
+        font-family: avenirBold;
+        font-size: 5em;
+    }
+    p{margin-bottom: 10px}
+    .idsmark {
+        position: absolute;
+        right: 0;
+        top: calc(50vh - 341px);
+    }
+    > div {
+        width: 600px;
+    }
+}
+
+.GenUX {
+    display: flex;
+    justify-content: space-between;
+    flex:1;
+}
+
+.GenTopNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {cursor: pointer}
+    .sign{
+        opacity: 1;
+        transition: 1s $drawerEase;
+        &.hide{
+            opacity: 0;
+            cursor: default;
+        }
+    }
+}
+
+.RoadMap {
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background: #F9FAFB;
+    width: 100vw;
+    transition: 1s $drawerEase;
+    height: 100vh;
+    overflow: hidden;
+    &.showAssist{
+        width: calc(100vw - $drawerWidth);
+    }
+    h1 {
+        font-family: avenirBold;
+        font-size: 4.5em;
+        line-height: 1.3em;
+        margin: 70px 0 0 0;
+    }
+    small {
+        color: #989d9f;
+        margin-left: 4px;
+    }
+}
+
+.Todos {
+    display: flex;
+    margin-top: 40px;
+    width: 100vw;
+    overflow-x: scroll;
+    .Category{
+        width: 350px;
+        h2 {
+            font-family: avenirDemi;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        img{ cursor: pointer }
+        &:not(:last-child){ margin-right: 15px }
+    }
+    .Project {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        overflow: hidden;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        > article {
+            display: flex;
+            justify-content: center;
+            padding: 25px 0;
+        }
+        .SuggestionChip .Chips {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .Workbench{
+            justify-content: flex-start;
+            img {
+                display: block;
+                width: 320px;
+                transform: translateX(-15px);
+            }
+        }
+        .componentName {
+            font-family: avenirDemi;
+            color: #FF4785;
+            text-align: left;
+            display: block;
+            padding-top: 10px;
+        }
+        .componentName,
+        article{ width: 100% }
+        
+        &:not(:last-child){ margin-bottom: 15px }
+    }
+}
+
+.projects {
+    height: calc(100vh - 274px);
+    overflow-y: scroll;
+      ::-webkit-scrollbar {
+        width: 1px;
+    }
+    ::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
 }
