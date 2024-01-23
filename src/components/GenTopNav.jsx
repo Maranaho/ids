@@ -1,4 +1,4 @@
-import motionLogo from '../assets/svg/motionLogo2.svg'
+import motionLogo from '../assets/svg/motionlogo2.svg'
 import { auth } from '../utils/firebase'
 import { useTTState } from '../context'
 
