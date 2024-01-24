@@ -6,6 +6,8 @@ import flyout from "../assets/svg/flyout.svg"
 import toast from "../assets/svg/toast.svg"
 import workbench from "../assets/svg/workbench.svg"
 import accesspoint from "../assets/svg/accesspoint.svg"
+import storybookIcn from "../assets/svg/storybook.svg"
+import figmaIcn from "../assets/svg/figma.svg"
 import accesspointhover from "../assets/svg/accesspointhover.svg"
 import inputchip from "../assets/svg/inputchip.svg"
 import { useState,useEffect } from "react"
@@ -47,6 +49,7 @@ const Project = ({categoryKey,projectKey})=>{
                 setReset(true)
                 setLoaded(false)
                 setGenerated(false)
+                setSubmitted(false)
             }}>Reset</button></div>}
         </div>,
         "Workbench":<img className="workbench" src={workbench}/>
@@ -67,9 +70,11 @@ const Project = ({categoryKey,projectKey})=>{
 
     return (
         <div className="Project">
-            <span className="componentName">{`<${projectKey} />`}</span>
-            {storybook&&<a className="links" href={storybook} target="_blank">Storybook</a>}
-            {figma&&<a className="links" href={figma} target="_blank">Figma</a>}
+            <div className="linksCtn">
+                <span className="componentName">{`<${projectKey} />`}</span>
+                {storybook&&<a className="links" href={storybook} target="_blank"><img width="15" src={storybookIcn}/></a>}
+                {figma&&<a className="links" href={figma} target="_blank"><img width="12" src={figmaIcn}/></a>}
+            </div>
             <article className={projectKey}>{components[projectKey]}</article>
         </div>
     )
