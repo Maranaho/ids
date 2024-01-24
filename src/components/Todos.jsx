@@ -8,11 +8,14 @@ import workbench from "../assets/svg/workbench.svg"
 import accesspoint from "../assets/svg/accesspoint.svg"
 import accesspointhover from "../assets/svg/accesspointhover.svg"
 import inputchip from "../assets/svg/inputchip.svg"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 
 const Project = ({categoryKey,projectKey})=>{
     const [submitted,setSubmitted] = useState(false)
+    const [generating,setGenerated] = useState(false)
+    const [loaded,setLoaded] = useState(false)
+    const [reset,setReset] = useState(false)
     const [accesspointimg,setAccesspointImg] = useState(accesspoint)
     const { figma,storybook } = todos[categoryKey][projectKey]
     const components = {
@@ -26,18 +29,41 @@ const Project = ({categoryKey,projectKey})=>{
         "InputChip":<img src={inputchip}/>,
         "Toast":<img src={toast}/>,
         "PendingResponse":<Generating/>,
-        "SuggestionChip":<Chips
-            chips={[
-                "{Dynamic response one}",
-                "{Additional response option}",
-                "{Customizable by BU}"
-            ]}
-            msgKey={projectKey}
-            submitted={submitted}
-            setSubmitted={setSubmitted}
-        />,
+        "SuggestionChip":<div className="chipTest">
+            <Chips
+                chips={[
+                    "{Dynamic response one}",
+                    "{Additional response option}",
+                    "{Customizable by BU}"
+                ]}
+                msgKey={projectKey}
+                submitted={submitted}
+                reset={reset}
+                setReset={setReset}
+                setSubmitted={setSubmitted}
+            />
+            {generating&&!loaded&&<Generating/>}
+            {submitted&&loaded&&<div className="resetBtn"><button onClick={()=>{
+                setReset(true)
+                setLoaded(false)
+                setGenerated(false)
+            }}>Reset</button></div>}
+        </div>,
         "Workbench":<img className="workbench" src={workbench}/>
     }
+
+    useEffect(()=>{
+        if(submitted){
+            setTimeout(()=>{
+                setLoaded(true)
+            },5000)
+        }
+        if(submitted){
+            setTimeout(()=>{
+                setGenerated(true)
+            },1200)
+        }
+    },[submitted])
 
     return (
         <div className="Project">

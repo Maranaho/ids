@@ -36,7 +36,7 @@ export const Chip =({
         return ()=> clearTimeout(clear)
     },[])
 
-
+    
     return (
         <button
             className={`Chip ${showUp?"firstPaint":""} ${gone?"gone":""} ${submitted && !gone ?"toBubble":""}`}
@@ -51,19 +51,31 @@ export const Chips = ({
         msgKey,
         submitted,
         setSubmitted,
+        reset,
+        setReset
     })=>{
 
     const [goneArr,setGoneArr] = useState([...chips].map(()=>false))
     const { state:{aiMsgIdx}, dispatch } = useTTState()
-
+    
     const handleClick = idx =>{
         if(!submitted){
             const tmpGone = [...goneArr].map((_,i)=>i !== idx)
-            setSubmitted&&setSubmitted(true)
+            setSubmitted(true)
             setGoneArr(tmpGone)
             sendAssistantMessage(dispatch,aiMsgIdx)
+            setReset(false)
         }
     }
+
+    const doReset = ()=>{
+        if(reset){
+            setSubmitted(false)
+            setGoneArr([...chips].map(()=>false))
+        }
+    }
+
+    useEffect(doReset,[reset])
 
     return (
         <div className="Chips">

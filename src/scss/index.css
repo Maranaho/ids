@@ -468,6 +468,9 @@ button.AccessPointButton {
   max-width: 80%;
   overflow: hidden;
 }
+.Chip:active {
+  transform: scale(0.9);
+}
 .Chip.firstPaint {
   opacity: 0;
   transform: scale(0.8);
@@ -805,4 +808,12 @@ button.AccessPointButton {
 .projects ::-webkit-scrollbar-thumb,
 .projects ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.chipTest {
+  display: flex;
+  flex-direction: column;
+}
+.chipTest .resetBtn {
+  text-align: right;
 }/*# sourceMappingURL=index.css.map */

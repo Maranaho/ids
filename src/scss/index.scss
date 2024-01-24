@@ -475,6 +475,10 @@ button.AccessPointButton {
     text-overflow: ellipsis;
     max-width: 80%;
     overflow: hidden;
+    &:active{
+        // transition: .3s ease;
+        transform: scale(.9);
+    }
     &.firstPaint{
         opacity: 0;
         transform: scale(.8);
@@ -777,5 +781,13 @@ button.AccessPointButton {
     ::-webkit-scrollbar-thumb,
     ::-webkit-scrollbar-track {
         background: transparent;
+    }
+}
+
+.chipTest {
+    display: flex;
+    flex-direction: column;
+    .resetBtn {
+        text-align: right;
     }
 }
