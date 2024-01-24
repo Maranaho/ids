@@ -745,6 +745,11 @@ button.AccessPointButton {
   flex-direction: column;
   display: flex;
   align-items: center;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.Todos .Project:hover {
+  border: 1px solid #dbe1ed;
 }
 .Todos .Project > article {
   display: flex;
@@ -752,7 +757,7 @@ button.AccessPointButton {
   padding: 25px 0;
 }
 .Todos .Project .SuggestionChip .Chips {
-  width: 100%;
+  width: 290px;
   box-sizing: border-box;
 }
 .Todos .Project .Workbench {
@@ -760,8 +765,11 @@ button.AccessPointButton {
 }
 .Todos .Project .Workbench img {
   display: block;
-  width: 320px;
+  width: 340px;
   transform: translateX(-15px);
+}
+.Todos .Project .SuggestionChip {
+  align-items: center;
 }
 .Todos .Project .componentName {
   font-family: avenirDemi;
@@ -769,6 +777,14 @@ button.AccessPointButton {
   text-align: left;
   display: block;
   padding-top: 10px;
+}
+.Todos .Project .links {
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 3px 0;
+  color: #0575DD;
+  font-family: avenirMedium;
 }
 .Todos .Project .componentName,
 .Todos .Project article {

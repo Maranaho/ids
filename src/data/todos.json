@@ -1,6 +1,42 @@
 {
-    "Backlog":["Greeting","FlyoutMenu"],
-    "In progress":["SuggestionChip","AccessPointButton"],
-    "In review":["PendingResponse"],
-    "Implemented":["Workbench","InputChip"]
+    "Backlog":{
+        "Greeting":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-greeting--playground&knob-Adapt%20parent%20container=true&knob-Alignment=left&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=8&knob-Label%201=What%20is%20the%20meaning%20of%20life?&knob-Label%202=What%20is%20my%20purpose%20on%20this%20earth?&knob-Label%203=How%20big%20is%20the%20universe?&knob-Layout=column&knob-Show%20fetching%20error=true&knob-align=start&knob-alignOffset=0&knob-avoidCollisions=true&knob-beta=true&knob-side=bottom&knob-sideOffset=0",
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=2149-372391&mode=design&t=kNNB4MnbWt6hxWzH-0"
+        },
+        "FlyoutMenu":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-flyoutmenu--playground&knob-Adapt%20parent%20container=true&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=8&knob-Show%20fetching%20error=true&knob-beta=true",
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=1909-344358&mode=design&t=8abKzlrp2BQTWdSe-0"
+        }
+    },
+    "In progress":{
+        "SuggestionChip":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-suggestion-chip--playground&knob-Adapt%20parent%20container=true&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=8&knob-Show%20fetching%20error=true&knob-beta=true",
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=18-99982&mode=design&t=kNNB4MnbWt6hxWzH-0"
+        },
+        "Toast":{
+            "storybook": null,
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=1909-344373&mode=design&t=8abKzlrp2BQTWdSe-0"
+        }
+    },
+    "In review":{
+        "PendingResponse":{
+            "storybook":null,
+            "figma":null
+        },
+        "AccessPointButton":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-access-point-button--playground",
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=18-99982&mode=design&t=kNNB4MnbWt6hxWzH-0"
+        }
+    },
+    "Implemented":{
+        "Workbench":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-workbench--playground&knob-Adapt%20parent%20container=true&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=8&knob-Show%20fetching%20error=true&knob-beta=true",
+            "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/branch/m9gke4hGlCw1ZCSebTRYTJ/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=18-99982&mode=design&t=klBccXWLIWnOaFKo-0"
+        },
+        "InputChip":{
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/cgds/3591/index.html?path=/story/components-input-chip-features--dropdown",
+            "figma":"https://www.figma.com/file/wMuBrZRaAneBq8wRx6JGPj/%F0%9F%9A%A7-CG-Chip?type=design&node-id=2821-18867&mode=design&t=HEerTdpCvj5dolOl-0"
+        }
+    }
 }

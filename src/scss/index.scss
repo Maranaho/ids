@@ -721,22 +721,28 @@ button.AccessPointButton {
         flex-direction: column;
         display: flex;
         align-items: center;
+        border: 1px solid #fff;
+        cursor: pointer;
+        &:hover{ border: 1px solid #dbe1ed }
         > article {
             display: flex;
             justify-content: center;
             padding: 25px 0;
         }
         .SuggestionChip .Chips {
-            width: 100%;
+            width: 290px;
             box-sizing: border-box;
         }
         .Workbench{
             justify-content: flex-start;
             img {
                 display: block;
-                width: 320px;
+                width: 340px;
                 transform: translateX(-15px);
             }
+        }
+        .SuggestionChip {
+            align-items: center;
         }
         .componentName {
             font-family: avenirDemi;
@@ -744,6 +750,15 @@ button.AccessPointButton {
             text-align: left;
             display: block;
             padding-top: 10px;
+        }
+        .links{
+            text-align: left;
+            display: block;
+            width: 100%;
+            padding: 3px 0;
+            color: $blue;
+            font-family: avenirMedium;
+
         }
         .componentName,
         article{ width: 100% }

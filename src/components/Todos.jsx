@@ -3,6 +3,7 @@ import { Chips } from "../components/Messages"
 import Generating from "../components/Generating"
 import WelcomeMsg from './WelcomeMsg'
 import flyout from "../assets/svg/flyout.svg"
+import toast from "../assets/svg/toast.svg"
 import workbench from "../assets/svg/workbench.svg"
 import accesspoint from "../assets/svg/accesspoint.svg"
 import accesspointhover from "../assets/svg/accesspointhover.svg"
@@ -10,9 +11,10 @@ import inputchip from "../assets/svg/inputchip.svg"
 import { useState } from "react"
 
 
-const Project = ({projectKey})=>{
+const Project = ({categoryKey,projectKey})=>{
     const [submitted,setSubmitted] = useState(false)
     const [accesspointimg,setAccesspointImg] = useState(accesspoint)
+    const { figma,storybook } = todos[categoryKey][projectKey]
     const components = {
         "AccessPointButton":<img
             src={accesspointimg}
@@ -22,6 +24,7 @@ const Project = ({projectKey})=>{
         "FlyoutMenu":<img src={flyout}/>,
         "Greeting":<WelcomeMsg/>,
         "InputChip":<img src={inputchip}/>,
+        "Toast":<img src={toast}/>,
         "PendingResponse":<Generating/>,
         "SuggestionChip":<Chips
             chips={[
@@ -39,6 +42,8 @@ const Project = ({projectKey})=>{
     return (
         <div className="Project">
             <span className="componentName">{`<${projectKey} />`}</span>
+            {storybook&&<a className="links" href={storybook} target="_blank">Storybook</a>}
+            {figma&&<a className="links" href={figma} target="_blank">Figma</a>}
             <article className={projectKey}>{components[projectKey]}</article>
         </div>
     )
@@ -50,10 +55,11 @@ const TodoList = ({categoryKey})=>{
         <div className="Category">
             <h2>{categoryKey}</h2>
             <div className="projects">
-                {todos[categoryKey].map(projectKey=>(
+                {Object.keys(todos[categoryKey]).map(projectKey=>(
                     <Project
                         key={projectKey}
                         projectKey={projectKey}
+                        categoryKey={categoryKey}
                     />
                 ))}
             </div>
