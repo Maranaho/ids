@@ -61,6 +61,7 @@ const Project = ({categoryKey,projectKey})=>{
         ]
 
     ]
+    const inputLink = "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/cgds/3591/index.html?path=/story/components-input-chip-features--dropdown"
 
     const components = {
         "AccessPointButtonRiv":<div className="AccessMain">
@@ -125,7 +126,7 @@ const Project = ({categoryKey,projectKey})=>{
             </div>
         </div>,
         "Greeting":<WelcomeMsg/>,
-        "InputChip":<img src={inputchip}/>,
+        "InputChip":<a href={inputLink} target="_blank"><img src={inputchip}/></a>,
         "Toast":<img src={toast}/>,
         "PendingResponse":<Generating/>,
         "SuggestionChip":<div className="chipTest">
