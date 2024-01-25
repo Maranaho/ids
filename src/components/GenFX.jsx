@@ -1,10 +1,9 @@
 import  { useState, useEffect } from 'react'
 
-const GenFX = ({ css,text, delay = 0,title }) => {
+const GenFX = ({ css,text, delay = 0,title,speed = 80 }) => {
   const [generatedText, setGeneratedText] = useState('')
   let wordIndex = 0
   const words = text.split(' ')
-  const speed = 80
   let intervalKey
 
   const generateText = () => {

@@ -2,8 +2,11 @@ import todos from '../data/todos.json'
 import { Chips } from "../components/Messages"
 import Generating from "../components/Generating"
 import WelcomeMsg from './WelcomeMsg'
+import GenFX from './GenFX'
+import Flyout from './Flyout'
 import AccessPointButtonRive from './AccessPointButtonRive'
-import flyout from "../assets/svg/flyout.svg"
+
+// import flyout from "../assets/svg/flyout.svg"
 import toast from "../assets/svg/toast.svg"
 import workbench from "../assets/svg/workbench.svg"
 import storybookIcn from "../assets/svg/storybook.svg"
@@ -14,14 +17,50 @@ import { useState,useEffect } from "react"
 
 const Project = ({categoryKey,projectKey})=>{
     const [submitted,setSubmitted] = useState(false)
+    const [nextPoem,setNextPoem] = useState(0)
     const [generating,setGenerated] = useState(false)
     const [loaded,setLoaded] = useState(false)
     const [reset,setReset] = useState(false)
+    const [showFly,setShowFly] = useState(true)
     const { figma,storybook } = todos[categoryKey][projectKey]
 
     const [ collapsed, setCollapsed ] = useState(false)
     const [ expert, setExpert ] = useState(true)
+    const [ hover, setHover ] = useState(false)
     const [ btnKey, setBtnKey ] = useState(["hover",false])
+    const poems = [
+        [
+            "Pixel waves in a coded sea,",
+            "AI's dance, fluid and free.",
+            "Lines converge, a motion tale,",
+            "In digital realms, design sets sail."
+        ],
+        [
+            "Digital veins pulse with motion's grace,",
+            "AI orchestrates a pixelated embrace.",
+            "Fluid rhythms in the dance of design,",
+            "A dynamic story, pixel lines intertwine."
+        ],
+        [
+            "In movement, design finds its beat,",
+            "AI orchestrates, a rhythm so sweet.",
+            "Lines and curves, a dance on display,",
+            "Motion unfolds in its graceful array."
+        ],
+        [
+            "Fluid transitions, seamless flow,",
+            "Frames in rhythm, a vibrant show.",
+            "AI and design, a harmonious blend,",
+            "Creating visuals that transcend."
+        ],
+        [
+            "In the dance of design, a rhythmic art,",
+            "Motion unfolds, a visual chart.",
+            "Seamless transitions, a vibrant play,",
+            "AI and design in a creative display."
+        ]
+
+    ]
 
     const components = {
         "AccessPointButtonRiv":<div className="AccessMain">
@@ -30,9 +69,22 @@ const Project = ({categoryKey,projectKey})=>{
                 onMouseOver={()=>setBtnKey(["hover",true])}
                 onMouseLeave={()=>setBtnKey(["hover",false])}
             >
-                <AccessPointButtonRive  btnKey={btnKey} />
+                <AccessPointButtonRive btnKey={btnKey} />
             </div>
             <div className="AccessCtrl">
+                <div>
+                    <input
+                        id="expert"
+                        type="checkbox"
+                        checked={expert}
+                        value={expert}
+                        onChange={()=>{
+                            setExpert(!expert)
+                            setBtnKey(["expert",!expert])
+                        }}
+                    />
+                    <label htmlFor="expert">Expert</label>
+                </div>
                 <div>
                     <input
                         id="collapsed"
@@ -48,20 +100,30 @@ const Project = ({categoryKey,projectKey})=>{
                 </div>
                 <div>
                     <input
-                        id="expert"
+                        id="hover"
                         type="checkbox"
-                        checked={expert}
-                        value={expert}
+                        checked={hover}
+                        value={hover}
                         onChange={()=>{
-                            setExpert(!expert)
-                            setBtnKey(["expert",!expert])
+                            setHover(!hover)
+                            setBtnKey(["hover",!hover])
                         }}
                     />
-                    <label htmlFor="expert">Expert</label>
+                    <label htmlFor="hover">MouseOver</label>
                 </div>
             </div>
         </div>,
-        "FlyoutMenu":<img src={flyout}/>,
+        "FlyoutMenu":<div>
+            <div className="Flyout">
+                {showFly&&<Flyout/>}
+            </div>
+            <div className="resetBtn">
+                <button onClick={()=>{
+                    setShowFly(false)
+                    setTimeout(()=>setShowFly(true),500)
+                }}>Reset</button>
+            </div>
+        </div>,
         "Greeting":<WelcomeMsg/>,
         "InputChip":<img src={inputchip}/>,
         "Toast":<img src={toast}/>,
@@ -80,11 +142,28 @@ const Project = ({categoryKey,projectKey})=>{
                 setSubmitted={setSubmitted}
             />
             {generating&&!loaded&&<Generating/>}
+            {loaded&&(
+                
+                <div className="AIGen">
+                    <span>Intuit Assist</span>
+                    <div>
+                        {poems[nextPoem].map((line,idx)=>(
+                            <GenFX
+                                speed={30}
+                                delay={200 + (200 * idx)}
+                                text={line}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )}
             {submitted&&loaded&&<div className="resetBtn"><button onClick={()=>{
                 setReset(true)
                 setLoaded(false)
                 setGenerated(false)
                 setSubmitted(false)
+                if(nextPoem < poems.length) setNextPoem(nextPoem=>nextPoem+1)
+                else setNextPoem(0)
             }}>Reset</button></div>}
         </div>,
         "Workbench":<img className="workbench" src={workbench}/>

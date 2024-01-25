@@ -711,20 +711,22 @@ button.AccessPointButton {
 }
 .RoadMap h1 {
   font-family: avenirBold;
-  font-size: 4.5em;
-  line-height: 1.3em;
-  margin: 70px 0 0 0;
+  font-size: 3em;
+  line-height: 1em;
+  margin: 40px 0 5px 0;
+  display: flex;
+  flex-direction: column;
 }
-.RoadMap small {
-  color: #989d9f;
-  margin-left: 4px;
+.RoadMap > small {
+  font-size: 1em;
+  font-family: avenirDemi;
+  margin-left: 2px;
 }
 
 .Todos {
   display: flex;
   margin-top: 40px;
   width: 100vw;
-  overflow-x: scroll;
 }
 .Todos .Category {
   width: 350px;
@@ -752,15 +754,14 @@ button.AccessPointButton {
   display: flex;
   align-items: center;
   border: 1px solid #fff;
-  cursor: pointer;
 }
 .Todos .Project:hover {
   border: 1px solid #dbe1ed;
 }
-.Todos .Project > article:not(.AccessPointButtonRiv) {
+.Todos .Project > article {
   display: flex;
   justify-content: center;
-  padding: 25px 0;
+  padding: 20px 0;
 }
 .Todos .Project .SuggestionChip .Chips {
   width: 290px;
@@ -771,7 +772,7 @@ button.AccessPointButton {
 }
 .Todos .Project .Workbench img {
   display: block;
-  width: 340px;
+  width: 310px;
 }
 .Todos .Project .SuggestionChip {
   align-items: center;
@@ -792,11 +793,8 @@ button.AccessPointButton {
   margin-left: 7px;
 }
 .Todos .Project .links {
-  text-align: left;
-  display: block;
-  padding: 3px 0;
-  color: #0575DD;
-  font-family: avenirMedium;
+  display: flex;
+  align-items: center;
 }
 .Todos .Project .componentName,
 .Todos .Project article {
@@ -823,7 +821,8 @@ button.AccessPointButton {
   display: flex;
   flex-direction: column;
 }
-.chipTest .resetBtn {
+
+.resetBtn {
   text-align: right;
 }
 
@@ -833,6 +832,7 @@ button.AccessPointButton {
 }
 
 .AccessPointButtonCtn {
+  cursor: pointer;
   margin: 30px 0;
   display: flex;
   justify-content: center;
@@ -853,4 +853,23 @@ button.AccessPointButton {
 }
 .AccessCtrl input {
   width: 30px;
+}
+
+.AIGen {
+  padding: 20px 0;
+  box-sizing: border-box;
+  width: 287px;
+}
+.AIGen span {
+  font-family: avenirDemi;
+  opacity: 0.8;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.Flyout,
+.Flyout {
+  width: 180px;
+  height: 228px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

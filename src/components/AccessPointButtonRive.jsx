@@ -4,9 +4,9 @@ import accesspointbutton from "../assets/rive/accesspointbutton.riv"
 
 const AccessPointButtonRive = ({
         btnKey,
-        initialHover = false,
+        initialExpert = true,
         initialCollapsed = false,
-        initialExpert = true
+        initialHover = false
     })=>{
     
     const stateMachineName = "accessButton"
