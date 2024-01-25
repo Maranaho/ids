@@ -32,7 +32,7 @@
     },
     "Implemented":{
         "Workbench":{
-            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-workbench--playground&knob-Adapt%20parent%20container=true&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=8&knob-Show%20fetching%20error=true&knob-beta=true",
+            "storybook":"https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-workbench--playground&knob-Adapt%20parent%20container=false&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=3&knob-Show%20fetching%20error=false&knob-beta=true",
             "figma":"https://www.figma.com/file/WHtRa6TlW5hkcG41ZCXDi8/branch/m9gke4hGlCw1ZCSebTRYTJ/Intuit-Assist-Components-(formerly-GenUX-Library)?type=design&node-id=18-99982&mode=design&t=klBccXWLIWnOaFKo-0"
         },
         "InputChip":{

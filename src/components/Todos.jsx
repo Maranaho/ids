@@ -62,6 +62,7 @@ const Project = ({categoryKey,projectKey})=>{
 
     ]
     const inputLink = "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/cgds/3591/index.html?path=/story/components-input-chip-features--dropdown"
+    const workLink = "https://ibp-cicd-core.prod1-ibp.a.intuit.com/design-systems/genux-ds/131/index.html?path=/story/components-workbench--playground&knob-Adapt%20parent%20container=false&knob-Error%20message=Something%20went%20wrong.&knob-Header=Invoice%20reminder%20template&knob-History%20length=3&knob-Show%20fetching%20error=false&knob-beta=true"
 
     const components = {
         "AccessPointButtonRiv":<div className="AccessMain">
@@ -167,7 +168,7 @@ const Project = ({categoryKey,projectKey})=>{
                 else setNextPoem(0)
             }}>Reset</button></div>}
         </div>,
-        "Workbench":<img className="workbench" src={workbench}/>
+        "Workbench":<a href={workLink} target="_blank"><img className="workbench" src={workbench}/></a>
     }
 
     useEffect(()=>{
