@@ -713,6 +713,7 @@ button.AccessPointButton {
             font-family: avenirDemi;
             font-size: 1.2em;
             margin-bottom: 15px;
+            user-select: none;
         }
         img{ cursor: pointer }
         &:not(:last-child){ margin-right: 15px }
@@ -728,7 +729,7 @@ button.AccessPointButton {
         border: 1px solid #fff;
         cursor: pointer;
         &:hover{ border: 1px solid #dbe1ed }
-        > article {
+        > article:not(.AccessPointButtonRiv) {
             display: flex;
             justify-content: center;
             padding: 25px 0;
@@ -794,5 +795,27 @@ button.AccessPointButton {
     flex-direction: column;
     .resetBtn {
         text-align: right;
+    }
+}
+.AccessPointButtonRive {
+    width: 144px;
+    height: 34px;
+}
+.AccessPointButtonCtn{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.AccessMain { width: 100% }
+.AccessCtrl {
+    > div {
+        &:first-child{padding-top: 10px}
+        align-items: center;
+        input,label{ cursor: pointer }
+    }
+    input{
+        width: 30px;
     }
 }

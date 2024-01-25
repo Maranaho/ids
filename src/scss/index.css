@@ -733,6 +733,9 @@ button.AccessPointButton {
   font-family: avenirDemi;
   font-size: 1.2em;
   margin-bottom: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .Todos .Category img {
   cursor: pointer;
@@ -754,7 +757,7 @@ button.AccessPointButton {
 .Todos .Project:hover {
   border: 1px solid #dbe1ed;
 }
-.Todos .Project > article {
+.Todos .Project > article:not(.AccessPointButtonRiv) {
   display: flex;
   justify-content: center;
   padding: 25px 0;
@@ -823,4 +826,32 @@ button.AccessPointButton {
 }
 .chipTest .resetBtn {
   text-align: right;
+}
+
+.AccessPointButtonRive {
+  width: 144px;
+  height: 34px;
+}
+
+.AccessPointButtonCtn {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.AccessMain {
+  width: 100%;
+}
+
+.AccessCtrl > div {
+  align-items: center;
+}
+.AccessCtrl > div:first-child {
+  padding-top: 10px;
+}
+.AccessCtrl > div input, .AccessCtrl > div label {
+  cursor: pointer;
+}
+.AccessCtrl input {
+  width: 30px;
 }/*# sourceMappingURL=index.css.map */
