@@ -6,8 +6,6 @@ import AccessPointButtonRive from './AccessPointButtonRive'
 import flyout from "../assets/svg/flyout.svg"
 import toast from "../assets/svg/toast.svg"
 import workbench from "../assets/svg/workbench.svg"
-// import accesspointhover from "../assets/svg/accesspointhover.svg"
-// import accesspoint from "../assets/svg/accesspoint.svg"
 import storybookIcn from "../assets/svg/storybook.svg"
 import figmaIcn from "../assets/svg/figma.svg"
 import inputchip from "../assets/svg/inputchip.svg"
@@ -19,35 +17,20 @@ const Project = ({categoryKey,projectKey})=>{
     const [generating,setGenerated] = useState(false)
     const [loaded,setLoaded] = useState(false)
     const [reset,setReset] = useState(false)
-    // const [accesspointimg,setAccesspointImg] = useState(accesspoint)
     const { figma,storybook } = todos[categoryKey][projectKey]
 
-    const [ hover, setHover ] = useState(false)
-    const [ active, setActive ] = useState(false)
     const [ collapsed, setCollapsed ] = useState(false)
     const [ expert, setExpert ] = useState(true)
     const [ btnKey, setBtnKey ] = useState(["hover",false])
 
     const components = {
-        // "AccessPointButton":<img
-        //     src={accesspointimg}
-        //     onMouseEnter={()=>setAccesspointImg(accesspointhover)}
-        //     onMouseLeave={()=>setAccesspointImg(accesspoint)}
-        // />,
         "AccessPointButtonRiv":<div className="AccessMain">
             <div
                 className="AccessPointButtonCtn"
-                onMouseOver={()=>{
-                    if(!active)setBtnKey(["hover",true])
-                }}
+                onMouseOver={()=>setBtnKey(["hover",true])}
                 onMouseLeave={()=>setBtnKey(["hover",false])}
-                onMouseDown={()=>setBtnKey(["active",true])}
-                onMouseUp={()=>setBtnKey(["active",false])}
             >
-                <AccessPointButtonRive
-                    btnKey={btnKey}
-                    active={active}
-                />
+                <AccessPointButtonRive  btnKey={btnKey} />
             </div>
             <div className="AccessCtrl">
                 <div>

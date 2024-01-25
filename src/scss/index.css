@@ -772,7 +772,6 @@ button.AccessPointButton {
 .Todos .Project .Workbench img {
   display: block;
   width: 340px;
-  transform: translateX(-15px);
 }
 .Todos .Project .SuggestionChip {
   align-items: center;

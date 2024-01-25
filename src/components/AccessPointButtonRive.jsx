@@ -4,16 +4,13 @@ import accesspointbutton from "../assets/rive/accesspointbutton.riv"
 
 const AccessPointButtonRive = ({
         btnKey,
-        active,
         initialHover = false,
-        initialActive = false,
         initialCollapsed = false,
         initialExpert = true
     })=>{
     
     const stateMachineName = "accessButton"
     const inputHover = "hover"
-    const inputActive = "active"
     const inputCollapsed = "collapsed"
     const inputExpert = "expert"
     const artboard = "AccessButtonPointRiv"
@@ -30,11 +27,6 @@ const AccessPointButtonRive = ({
             stateMachineName,
             inputHover, initialHover
         )
-    const activeInput = useStateMachineInput(
-            rive,
-            stateMachineName,
-            inputActive, initialActive
-        )
     const collapsedInput = useStateMachineInput(
             rive,
             stateMachineName,
@@ -49,19 +41,12 @@ const AccessPointButtonRive = ({
     const handleChange = () =>{
        if(
             hoverInput&&
-            activeInput&&
             collapsedInput&&
             expertInput
         ){
 
         switch (btnKey[0]) {
-
             case "hover": hoverInput.value = btnKey[1]; break;
-            case "active":{
-                if(!active && btnKey[1])activeInput.value = btnKey[1]
-                if(active && !btnKey[1])activeInput.value = btnKey[1]
-                break;
-            }
             case "collapsed": collapsedInput.value = btnKey[1];break;
             case "expert": expertInput.value = btnKey[1]; break;
         }
@@ -71,7 +56,6 @@ const AccessPointButtonRive = ({
     useEffect(handleChange,[
         btnKey,
         hoverInput,
-        activeInput,
         collapsedInput,
         expertInput
     ])
