@@ -133,9 +133,9 @@ const Project = ({categoryKey,projectKey})=>{
         "SuggestionChip":<div className="chipTest">
             <Chips
                 chips={[
-                    "{Dynamic response one}",
-                    "{Additional response option}",
-                    "{Customizable by BU}"
+                    "Manage my projects",
+                    "Generate Lynda's invoice",
+                    "Show my income"
                 ]}
                 msgKey={projectKey}
                 submitted={submitted}

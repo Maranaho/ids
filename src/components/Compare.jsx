@@ -50,7 +50,7 @@ const Compare = ()=>{
                         <div
                             className={`${bar < threshhold ? "low":""} ${bar === 33?"bingo":""}`}
                             style={style}
-                            key={new Date().getTime() + "-" +idx}
+                            key={bar}
                         >
                             <small>${bar}0.00</small>
                         </div>
