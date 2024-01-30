@@ -115,7 +115,7 @@ const Message = ({messageItem,msgKey}) =>{
 
   return (
       <article className={`${sender} ${submitted?"submitted":""} ${makeMeRound ? "makeMeRound":""}`}>
-        {isAi && <span>Intuit Assist</span>}
+        {isAi && false && <span>Intuit Assist</span>}
         <p>{message}</p>
         {generated&&generated!=="compare"&&<img src={generatedResponses[generated]}/>}
         {generated&&generated==="compare"&&<Compare />}

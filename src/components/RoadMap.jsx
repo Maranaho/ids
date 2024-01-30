@@ -7,11 +7,7 @@ const RoadMap = ()=>{
     return (
         <div className={`RoadMap ${showAssist?"showAssist":""}`}>
             <GenTopNav/>
-            <h1>
-                <span>FY24</span>
-                <span>Motion</span>
-                <span>Roadmap</span>
-            </h1>
+            <h1>Intuit Assist Motion Roadmap</h1>
             <small>Due 7/31/2024</small>
             <Todos/>
         </div>

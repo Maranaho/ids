@@ -3,7 +3,7 @@ import { useRive, useStateMachineInput } from '@rive-app/react-canvas-lite'
 import accesspointbutton from "../assets/rive/accesspointbutton.riv"
 
 const AccessPointButtonRive = ({
-        btnKey,
+        btnKey=["hover",false],
         initialExpert = true,
         initialCollapsed = false,
         initialHover = false
