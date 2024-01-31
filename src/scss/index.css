@@ -92,11 +92,21 @@ button.AccessPointButton {
   align-items: center;
 }
 
+.PendingResonseExplorations,
 .Generating {
   margin-top: 20px;
 }
-.Generating span {
+.PendingResonseExplorations span, .PendingResonseExplorations input,
+.Generating span,
+.Generating input {
   font-family: avenirMedium;
+  font-size: 1em;
+}
+.PendingResonseExplorations input,
+.Generating input {
+  border: none;
+  padding: 0;
+  outline: none;
 }
 
 .ChatHeader {
@@ -737,8 +747,18 @@ button.AccessPointButton {
 
 .Todos {
   display: flex;
-  margin-top: 40px;
+  margin-top: 70px;
   width: 100vw;
+  height: calc(100vh - 160px);
+  overflow-y: scroll;
+}
+.Todos ::-webkit-scrollbar {
+  width: 1px;
+}
+.Todos ::-webkit-scrollbar-thumb:hover,
+.Todos ::-webkit-scrollbar-thumb,
+.Todos ::-webkit-scrollbar-track {
+  background: transparent;
 }
 .Todos .Category {
   width: 350px;
@@ -816,19 +836,6 @@ button.AccessPointButton {
   margin-bottom: 15px;
 }
 
-.projects {
-  height: calc(100vh - 274px);
-  overflow-y: scroll;
-}
-.projects ::-webkit-scrollbar {
-  width: 1px;
-}
-.projects ::-webkit-scrollbar-thumb:hover,
-.projects ::-webkit-scrollbar-thumb,
-.projects ::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .chipTest {
   display: flex;
   flex-direction: column;
@@ -886,4 +893,15 @@ button.AccessPointButton {
   width: 180px;
   height: 228px;
   cursor: pointer;
+}
+
+.PendingResonseExplorations {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.PendingResonseExplorations > div {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

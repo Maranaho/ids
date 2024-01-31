@@ -1,16 +1,13 @@
 import LottiePlayer from './LottiePlayer'
-// import { Medium } from "@cgds/typography"
-// import magic from '../assets/lotties/magic.json'
-// import magic from '../assets/lotties/magicReg.json'
-// import magic from '../assets/lotties/text.json'
-// import magic from '../assets/lotties/text1.json'
-import magic from '../assets/lotties/stars.json'
-
-const Generating = ()=>(
-    <div className="Generating">
-        <LottiePlayer anim={magic}/>
-        <span>Working</span>
-    </div>
-)
-
+import anims from "../data/anims.js"
+import { useTTState } from '../context'
+const Generating = ()=>{
+    const { state:{ pendingCopy,anim } } = useTTState()
+    return (
+        <div className="Generating">
+            <LottiePlayer anim={anims[anim]}/>
+            <span>{pendingCopy}</span>
+        </div>
+    )
+}
 export default Generating

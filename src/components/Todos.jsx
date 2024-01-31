@@ -1,5 +1,6 @@
 import todos from '../data/todos.json'
 import { Chips } from "../components/Messages"
+import PendingExplorations from "../components/PendingExplorations"
 import Generating from "../components/Generating"
 import WelcomeMsg from './WelcomeMsg'
 import GenFX from './GenFX'
@@ -129,7 +130,7 @@ const Project = ({categoryKey,projectKey})=>{
         "Greeting":<WelcomeMsg/>,
         "InputChip":<a href={inputLink} target="_blank"><img src={inputchip}/></a>,
         "Toast":<img src={toast}/>,
-        "PendingResponse":<Generating/>,
+        "PendingResponse":<PendingExplorations/>,
         "SuggestionChip":<div className="chipTest">
             <Chips
                 chips={[

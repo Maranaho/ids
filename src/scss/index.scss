@@ -132,10 +132,17 @@ button.AccessPointButton {
     display: flex;
     align-items: center;
 }
+.PendingResonseExplorations,
 .Generating {
     margin-top: 20px;
-    span {
+    span,input {
         font-family: avenirMedium;
+        font-size: 1em;
+    }
+    input {
+        border: none;
+        padding: 0;
+        outline: none;
     }
 }
 
@@ -718,8 +725,18 @@ button.AccessPointButton {
 
 .Todos {
     display: flex;
-    margin-top: 40px;
+    margin-top: 70px;
     width: 100vw;
+    height: calc(100vh - 160px);
+    overflow-y: scroll;
+      ::-webkit-scrollbar {
+        width: 1px;
+    }
+    ::-webkit-scrollbar-thumb:hover,
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
     .Category{
         width: 350px;
         h2 {
@@ -785,19 +802,6 @@ button.AccessPointButton {
     }
 }
 
-.projects {
-    height: calc(100vh - 274px);
-    overflow-y: scroll;
-      ::-webkit-scrollbar {
-        width: 1px;
-    }
-    ::-webkit-scrollbar-thumb:hover,
-    ::-webkit-scrollbar-thumb,
-    ::-webkit-scrollbar-track {
-        background: transparent;
-    }
-}
-
 .chipTest {
     display: flex;
     flex-direction: column;
@@ -847,4 +851,15 @@ button.AccessPointButton {
     width: 180px;
     height: 228px;
     cursor: pointer;
+}
+
+.PendingResonseExplorations {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > div{
+        display: flex;
+        align-items: center;
+    }
 }
