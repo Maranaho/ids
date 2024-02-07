@@ -666,10 +666,15 @@ button.AccessPointButton {
     }
 }
 
-.GenUX {
+.GenMain {
     display: flex;
     justify-content: space-between;
     flex:1;
+}
+
+.idsTop {
+    background: linear-gradient(90deg,$ids1,$ids2);
+    padding: 10px 40px;
 }
 
 .GenTopNav {
@@ -704,6 +709,10 @@ button.AccessPointButton {
     transition: 1s $drawerEase;
     height: 100vh;
     overflow: hidden;
+    > nav{
+        display: flex;
+        justify-content: space-between;
+    }
     &.showAssist{
         width: calc(100vw - $drawerWidth);
     }
@@ -711,7 +720,7 @@ button.AccessPointButton {
         font-family: avenirBold;
         font-size: 3em;
         line-height: 1em;
-        margin: 20px 0 5px 0;
+        margin: 5px 0;
         display: flex;
         flex-direction: column;
     }

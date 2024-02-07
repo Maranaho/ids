@@ -687,10 +687,15 @@ button.AccessPointButton {
   width: 600px;
 }
 
-.GenUX {
+.GenMain {
   display: flex;
   justify-content: space-between;
   flex: 1;
+}
+
+.idsTop {
+  background: linear-gradient(90deg, #246DFF, #0151F2);
+  padding: 10px 40px;
 }
 
 .GenTopNav {
@@ -728,6 +733,10 @@ button.AccessPointButton {
   height: 100vh;
   overflow: hidden;
 }
+.RoadMap > nav {
+  display: flex;
+  justify-content: space-between;
+}
 .RoadMap.showAssist {
   width: calc(100vw - 400px);
 }
@@ -735,7 +744,7 @@ button.AccessPointButton {
   font-family: avenirBold;
   font-size: 3em;
   line-height: 1em;
-  margin: 20px 0 5px 0;
+  margin: 5px 0;
   display: flex;
   flex-direction: column;
 }
