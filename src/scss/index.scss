@@ -712,6 +712,7 @@ button.AccessPointButton {
     > nav{
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
     }
     &.showAssist{
         width: calc(100vw - $drawerWidth);

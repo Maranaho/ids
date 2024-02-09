@@ -736,6 +736,7 @@ button.AccessPointButton {
 .RoadMap > nav {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .RoadMap.showAssist {
   width: calc(100vw - 400px);
